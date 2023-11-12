@@ -5,7 +5,7 @@
 
 /* macros */
 
-{
+/ {
     macros {
         macro_github: macro_github {
             label = "macro_github";
