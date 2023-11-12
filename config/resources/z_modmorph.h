@@ -1,3 +1,5 @@
+#pragma once
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
@@ -11,8 +13,8 @@
                 label = ZMK_MACRO_STRINGIFY(accent_ ## name); \
                 #binding-cells = <0>; \
                 bindings = <&kp regular_binding>, <&kp morph_binding>; \
-                mods = <(MOD_RALT)>; \
+                mods = <morph_mods>; \
                 keep-mods = <keep_mods>; \
-            };
+            }; \
         }; \
     };
