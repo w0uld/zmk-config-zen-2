@@ -4,7 +4,7 @@
 /* mod-morph, idea from caksoylar: https://github.com/caksoylar */
 
 #define Z_ACCENT(name, regular_binding, morph_binding, morph_mods, keep_mods) \
-  / { \
+    / { \
         behaviors { \
             name: name { \
                 compatible = "zmk,behavior-mod-morph"; \

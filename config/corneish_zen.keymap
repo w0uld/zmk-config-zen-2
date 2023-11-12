@@ -123,7 +123,7 @@ Z_COMBO(combo_bltth2,       &bt BT_SEL 1,   LT2 LB2,         _COMBO_SHRT, _PRIOR
 Z_COMBO(combo_bltth3,       &bt BT_SEL 2,   LT3 LB3,         _COMBO_SHRT, _PRIOR_IDLE, ALL)
 Z_COMBO(combo_bltth4,       &bt BT_SEL 3,   LT4 LB4,         _COMBO_SHRT, _PRIOR_IDLE, ALL)
 
-Z_COMBO(combo_github,       &macro_github,  RT0 RM0 RB0,     _COMBO_SHRT, _PRIOR_IDLE, ALL) // uses z_macros.h
+Z_COMBO(combo_github,       &macro_github,  RT0 RM0 RB0,     _COMBO_SHRT, _PRIOR_IDLE, ALL) // uses z_macro.h
 
 
 /* keymap */
