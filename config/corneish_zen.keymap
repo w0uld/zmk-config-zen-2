@@ -5,7 +5,7 @@
 /* userspace modules */
 #include "resources/keypos_42keys.h"
 #include "resources/z_combo.h"      // Z_COMBO
-#include "resources/z_modmorph.h"   // Z_ACCENTS
+#include "resources/z_modmorph.h"   // Z_MODMORPH
 #include "resources/z_macro.h"      // macro_github
 
 /* layer aliases */
@@ -84,22 +84,22 @@
 };
 
 
-/* accents, uses z_modmorph.h */
-// Syntax: Z_ACCENT(name, regular_binding, morph_binding, morph_mods, keep_mods)
+/* mod morph, uses z_modmorph.h */
+// syntax: Z_MODMORPH(name, regular_binding, morph_binding, morph_mods, keep_mods)
 
-Z_ACCENT(acc_f15,   A,      F15, (MOD_RALT), (MOD_RALT))
-Z_ACCENT(acc_f16,   O,      F16, (MOD_RALT), (MOD_RALT))
-Z_ACCENT(acc_f17,   E,      F17, (MOD_RALT), (MOD_RALT))
-Z_ACCENT(acc_f18,   U,      F18, (MOD_RALT), (MOD_RALT))
-Z_ACCENT(acc_f19,   I,      F19, (MOD_RALT), (MOD_RALT))
-Z_ACCENT(acc_f20,   APOS,   F20, (MOD_RALT), (MOD_RALT))
-Z_ACCENT(acc_f21,   COMMA,  F21, (MOD_RALT), (MOD_RALT))
-Z_ACCENT(acc_f22,   DOT,    F22, (MOD_RALT), (MOD_RALT))
-Z_ACCENT(acc_f23,   P,      F23, (MOD_RALT), (MOD_RALT))
+Z_MODMORPH(acc_f15,   A,      F15, (MOD_RSFT), 0)
+Z_MODMORPH(acc_f16,   O,      F16, (MOD_RSFT), 0)
+Z_MODMORPH(acc_f17,   E,      F17, (MOD_RSFT), 0)
+Z_MODMORPH(acc_f18,   U,      F18, (MOD_RSFT), 0)
+Z_MODMORPH(acc_f19,   I,      F19, (MOD_RSFT), 0)
+Z_MODMORPH(acc_f20,   APOS,   F20, (MOD_RSFT), 0)
+Z_MODMORPH(acc_f21,   COMMA,  F21, (MOD_RSFT), 0)
+Z_MODMORPH(acc_f22,   DOT,    F22, (MOD_RSFT), 0)
+Z_MODMORPH(acc_f23,   P,      F23, (MOD_RSFT), 0)
 
 
 /* combos, uses z_combo.h */
-// Syntax: Z_COMBO(name, combo_bindings, keypos, combo_timeout, combo_prioridle, combo_layers)
+// syntax: Z_COMBO(name, combo_bindings, keypos, combo_timeout, combo_prioridle, combo_layers)
 
 Z_COMBO(combo_esc,          AS(ESC),        LT5 LT4,         _COMBO_SHRT, _PRIOR_IDLE, Z_ALL)
 Z_COMBO(combo_backslash,    AS(BSLH),       LB5 LB4,         _COMBO_SHRT, _PRIOR_IDLE, Z_ALL)
