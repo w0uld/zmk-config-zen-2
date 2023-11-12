@@ -108,10 +108,10 @@ Z_COMBO(combo_grave,        AS(GRAVE),      LH2 LH1,         _COMBO_SHRT, _PRIOR
 Z_COMBO(combo_copy,         &kp LC(INS),    LB3 LB2,         _COMBO_SHRT, _PRIOR_IDLE, Z_ALL)
 Z_COMBO(combo_paste,        &kp LS(INS),    LB2 LB1,         _COMBO_SHRT, _PRIOR_IDLE, Z_ALL)
 
-Z_COMBO(combo_lctrl,        &sk LCTRL,      LM1 LM2,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER NMBR NAVI)
-Z_COMBO(combo_rctrl,        &sk LCTRL,      RM1 RM2,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER NMBR NAVI)
-Z_COMBO(combo_lctrlshift,   &sk LS(LCTRL),  LM1 LM2 LM3,     _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER NMBR NAVI)
-Z_COMBO(combo_rctrlshift,   &sk LS(LCTRL),  RM1 RM2 RM3,     _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER NMBR NAVI)
+Z_COMBO(combo_lctrl,        &sk LCTRL,      LM1 LM2,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
+Z_COMBO(combo_rctrl,        &sk LCTRL,      RM1 RM2,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
+Z_COMBO(combo_lctrlshift,   &sk LS(LCTRL),  LM1 LM2 LM3,     _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
+Z_COMBO(combo_rctrlshift,   &sk LS(LCTRL),  RM1 RM2 RM3,     _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
 
 Z_COMBO(combo_locknum0,     &kp KP_NLCK,    RM5 RT5,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
 Z_COMBO(combo_lockcaps,     &kp CLCK,       RM5 RB5,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
@@ -144,7 +144,7 @@ Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_SHRT, _PRIOR
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
         &kp LSHFT       &kp SEMI        &kp Q           &kp J           &kp K           &kp X               &kp B           &kp M           &kp W           &kp V           &kp Z       &mt LSHFT EQUAL
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                                        &kp LALT        &kp SPACE   &_lt NMBR SPACE      &lt NAVI BSPC      &kp RALT      &mt LGUI RET
+                                                        &kp LALT        &kp SPACE   &_lt NMBR SPACE      &lt NAVI BSPC      &kp RSHFT     &mt LGUI RET
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
 
 /*
