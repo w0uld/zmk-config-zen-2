@@ -104,6 +104,7 @@ MM_ACCENT(_mma_p,       P,      F23)
 
 /* Combos, syntax idea taken from Urob: https://github.com/urob/zmk-nodefree-config */
 
+#define COMBO_HOOK
 #define Z_COMBO(name, combo_bindings, keypos, combo_layers, combo_timeout, combo_prioridle) \
     / { \
         combos { \
