@@ -110,14 +110,13 @@ MM_ACCENT(_mma_p,       P,      F23)
 /* Combos, syntax idea taken from Urob: https://github.com/urob/zmk-nodefree-config */
 
 #define COMBO_HOOK
-#define Z_COMBO(name, combo_bindings, keypos, combo_layers, combo_timeout, combo_prioridle) \
+#define Z_COMBO(name, combo_bindings, keypos, combo_timeout, combo_prioridle) \
     / { \
         combos { \
             compatible = "zmk,combos"; \
             combo_ ## name { \
                 bindings = <combo_bindings>; \
                 key-positions = <keypos>; \
-                layers = <combo_layers>; \
                 timeout-ms = <combo_timeout>; \
                 require-prior-idle-ms = <combo_prioridle>; \
             }; \
@@ -125,34 +124,33 @@ MM_ACCENT(_mma_p,       P,      F23)
     };
 
 
-Z_COMBO(combo_esc,          AS(ESC),        LT5 LT4,     ALL, _COMBO_SHRT, _PRIOR_IDLE)
-/*
-Z_COMBO(combo_backslash,    AS(BSLH),       LB5 LB4,     ALL, _COMBO_SHRT, _PRIOR_IDLE)
-Z_COMBO(combo_grave,        AS(GRAVE),      LH2 LH1,     ALL, _COMBO_SHRT, _PRIOR_IDLE)
+Z_COMBO(combo_esc,          AS(ESC),        LT5 LT4,         _COMBO_SHRT, _PRIOR_IDLE)
+Z_COMBO(combo_backslash,    AS(BSLH),       LB5 LB4,         _COMBO_SHRT, _PRIOR_IDLE)
+Z_COMBO(combo_grave,        AS(GRAVE),      LH2 LH1,         _COMBO_SHRT, _PRIOR_IDLE)
 
-Z_COMBO(combo_copy,         &kp LC(INS),    LB4 LB3 LB2, ALL, _COMBO_SHRT, _PRIOR_IDLE)
-Z_COMBO(combo_paste,        &kp LS(INS),    LB3 LB2 LB1, ALL, _COMBO_SHRT, _PRIOR_IDLE)
+Z_COMBO(combo_copy,         &kp LC(INS),    LB4 LB3 LB2,     _COMBO_SHRT, _PRIOR_IDLE)
+Z_COMBO(combo_paste,        &kp LS(INS),    LB3 LB2 LB1,     _COMBO_SHRT, _PRIOR_IDLE)
 
-Z_COMBO(combo_lctrl,        &sk LCTRL,      LM1 LM2,     ALL, _COMBO_SHRT, _PRIOR_IDLE)
-Z_COMBO(combo_rctrl,        &sk LCTRL,      RM1 RM2,     ALL, _COMBO_SHRT, _PRIOR_IDLE)
-Z_COMBO(combo_lctrlshift,   &sk LS(LCTRL),  LM1 LM2 LM3, ALL, _COMBO_SHRT, _PRIOR_IDLE)
-Z_COMBO(combo_rctrlshift,   &sk LS(LCTRL),  RM1 RM2 RM3, ALL, _COMBO_SHRT, _PRIOR_IDLE)
+Z_COMBO(combo_lctrl,        &sk LCTRL,      LM1 LM2,         _COMBO_SHRT, _PRIOR_IDLE)
+Z_COMBO(combo_rctrl,        &sk LCTRL,      RM1 RM2,         _COMBO_SHRT, _PRIOR_IDLE)
+Z_COMBO(combo_lctrlshift,   &sk LS(LCTRL),  LM1 LM2 LM3,     _COMBO_SHRT, _PRIOR_IDLE)
+Z_COMBO(combo_rctrlshift,   &sk LS(LCTRL),  RM1 RM2 RM3,     _COMBO_SHRT, _PRIOR_IDLE)
 
-Z_COMBO(combo_locknum0,     &kp KP_NLCK,    RH0 RT0,     ALL, _COMBO_SHRT, _PRIOR_IDLE)
-Z_COMBO(combo_lockcaps,     &kp KP_CLCK,    RH0 RM0,     ALL, _COMBO_SHRT, _PRIOR_IDLE)
-Z_COMBO(combo_lockscrl,     &kp KP_SLCK,    RH0 RB0,     ALL, _COMBO_SHRT, _PRIOR_IDLE)
+Z_COMBO(combo_locknum0,     &kp KP_NLCK,    RH0 RT0,         _COMBO_SHRT, _PRIOR_IDLE)
+Z_COMBO(combo_lockcaps,     &kp KP_CLCK,    RH0 RM0,         _COMBO_SHRT, _PRIOR_IDLE)
+Z_COMBO(combo_lockscrl,     &kp KP_SLCK,    RH0 RB0,         _COMBO_SHRT, _PRIOR_IDLE)
 
-Z_COMBO(combo_layergame,    &tog GAME,      RH0 RH2,     ALL, _COMBO_SHRT, _PRIOR_IDLE)
-Z_COMBO(combo_layerqwer,    &tog QWER,      LH0 LH2,     ALL, _COMBO_SHRT, _PRIOR_IDLE)
+Z_COMBO(combo_layergame,    &tog GAME,      RH0 RH2,         _COMBO_SHRT, _PRIOR_IDLE)
+Z_COMBO(combo_layerqwer,    &tog QWER,      LH0 LH2,         _COMBO_SHRT, _PRIOR_IDLE)
 
-Z_COMBO(combo_bltthclr,     &bt BT_CLR,     LT0 LB0,     ALL, _COMBO_SHRT, _PRIOR_IDLE)
-Z_COMBO(combo_bltth1,       &bt BT_SEL 0,   LT1 LB1,     ALL, _COMBO_SHRT, _PRIOR_IDLE)
-Z_COMBO(combo_bltth2,       &bt BT_SEL 1,   LT2 LB2,     ALL, _COMBO_SHRT, _PRIOR_IDLE)
-Z_COMBO(combo_bltth3,       &bt BT_SEL 2,   LT2 LB3,     ALL, _COMBO_SHRT, _PRIOR_IDLE)
-Z_COMBO(combo_bltth4,       &bt BT_SEL 3,   LT2 LB4,     ALL, _COMBO_SHRT, _PRIOR_IDLE)
+Z_COMBO(combo_bltthclr,     &bt BT_CLR,     LT0 LB0,         _COMBO_SHRT, _PRIOR_IDLE)
+Z_COMBO(combo_bltth1,       &bt BT_SEL 0,   LT1 LB1,         _COMBO_SHRT, _PRIOR_IDLE)
+Z_COMBO(combo_bltth2,       &bt BT_SEL 1,   LT2 LB2,         _COMBO_SHRT, _PRIOR_IDLE)
+Z_COMBO(combo_bltth3,       &bt BT_SEL 2,   LT2 LB3,         _COMBO_SHRT, _PRIOR_IDLE)
+Z_COMBO(combo_bltth4,       &bt BT_SEL 3,   LT2 LB4,         _COMBO_SHRT, _PRIOR_IDLE)
 
-Z_COMBO(combo_github,       &macro_github,  RT0 RM0 RB0, ALL, _COMBO_SHRT, _PRIOR_IDLE)
-*/
+Z_COMBO(combo_github,       &macro_github,  RT0 RM0 RB0,     _COMBO_SHRT, _PRIOR_IDLE)
+
 
 /* Macros */
 / {
