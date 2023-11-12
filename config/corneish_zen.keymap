@@ -87,15 +87,15 @@
 /* mod morph, uses z_modmorph.h */
 // syntax: Z_MODMORPH(name, regular_binding, morph_binding, morph_mods, keep_mods)
 
-Z_MODMORPH(acc_f15,   A,      F15, (MOD_RSFT), )
-Z_MODMORPH(acc_f16,   O,      F16, (MOD_RSFT), )
-Z_MODMORPH(acc_f17,   E,      F17, (MOD_RSFT), )
-Z_MODMORPH(acc_f18,   U,      F18, (MOD_RSFT), )
-Z_MODMORPH(acc_f19,   I,      F19, (MOD_RSFT), )
-Z_MODMORPH(acc_f20,   APOS,   F20, (MOD_RSFT), )
-Z_MODMORPH(acc_f21,   COMMA,  F21, (MOD_RSFT), )
-Z_MODMORPH(acc_f22,   DOT,    F22, (MOD_RSFT), )
-Z_MODMORPH(acc_f23,   P,      F23, (MOD_RSFT), )
+Z_MODMORPH(acc_f15,   A,      F15, (MOD_RSFT), /)
+Z_MODMORPH(acc_f16,   O,      F16, (MOD_RSFT), /)
+Z_MODMORPH(acc_f17,   E,      F17, (MOD_RSFT), /)
+Z_MODMORPH(acc_f18,   U,      F18, (MOD_RSFT), /)
+Z_MODMORPH(acc_f19,   I,      F19, (MOD_RSFT), /)
+Z_MODMORPH(acc_f20,   APOS,   F20, (MOD_RSFT), /)
+Z_MODMORPH(acc_f21,   COMMA,  F21, (MOD_RSFT), /)
+Z_MODMORPH(acc_f22,   DOT,    F22, (MOD_RSFT), /)
+Z_MODMORPH(acc_f23,   P,      F23, (MOD_RSFT), /)
 
 
 /* combos, uses z_combo.h */
