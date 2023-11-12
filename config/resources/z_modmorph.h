@@ -10,7 +10,7 @@
         behaviors { \
             name: name { \
                 compatible = "zmk,behavior-mod-morph"; \
-                label = ZMK_MACRO_STRINGIFY(accent_ ## name); \
+                label = ZMK_MACRO_STRINGIFY(modmorph_ ## name); \
                 #binding-cells = <0>; \
                 bindings = <&kp regular_binding>, <&kp morph_binding>; \
                 mods = <morph_mods>; \
