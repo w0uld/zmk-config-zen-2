@@ -63,9 +63,8 @@
 };
 
 
-/* Autoshift definition */
+/* Autoshift */
 #define AS(keycode) &_autoshift LS(keycode) keycode
-
 / {
     behaviors {
         _autoshift: _autoshift {
@@ -106,10 +105,7 @@ MM_ACCENT(_mma_dot,     DOT,    F22)
 MM_ACCENT(_mma_p,       P,      F23)
 
 
-
 /* Combos, syntax idea taken from Urob: https://github.com/urob/zmk-nodefree-config */
-
-#define COMBO_HOOK
 #define Z_COMBO(name, combo_bindings, keypos, combo_timeout, combo_prioridle) \
     / { \
         combos { \
@@ -123,7 +119,6 @@ MM_ACCENT(_mma_p,       P,      F23)
         }; \
     };
 
-
 Z_COMBO(combo_esc,          AS(ESC),        LT5 LT4,         _COMBO_SHRT, _PRIOR_IDLE)
 Z_COMBO(combo_backslash,    AS(BSLH),       LB5 LB4,         _COMBO_SHRT, _PRIOR_IDLE)
 Z_COMBO(combo_grave,        AS(GRAVE),      LH2 LH1,         _COMBO_SHRT, _PRIOR_IDLE)
@@ -136,11 +131,9 @@ Z_COMBO(combo_rctrl,        &sk LCTRL,      RM1 RM2,         _COMBO_SHRT, _PRIOR
 Z_COMBO(combo_lctrlshift,   &sk LS(LCTRL),  LM1 LM2 LM3,     _COMBO_SHRT, _PRIOR_IDLE)
 Z_COMBO(combo_rctrlshift,   &sk LS(LCTRL),  RM1 RM2 RM3,     _COMBO_SHRT, _PRIOR_IDLE)
 
-
 Z_COMBO(combo_locknum0,     &kp KP_NLCK,    RH0 RT0,         _COMBO_SHRT, _PRIOR_IDLE)
 Z_COMBO(combo_lockcaps,     &kp CLCK,       RH0 RM0,         _COMBO_SHRT, _PRIOR_IDLE)
 Z_COMBO(combo_lockscrl,     &kp SLCK,       RH0 RB0,         _COMBO_SHRT, _PRIOR_IDLE)
-
 
 Z_COMBO(combo_layergame,    &tog GAME,      RH0 RH2,         _COMBO_SHRT, _PRIOR_IDLE)
 Z_COMBO(combo_layerqwer,    &tog QWER,      LH0 LH2,         _COMBO_SHRT, _PRIOR_IDLE)
