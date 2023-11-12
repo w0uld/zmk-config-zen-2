@@ -1,7 +1,7 @@
+#pragma once
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-
-#pragma once
 
 /* combos, idea from urob: https://github.com/urob/zmk-nodefree-config */
 #define ALL 0xff
@@ -14,9 +14,7 @@
                 key-positions = <keypos>; \
                 timeout-ms = <combo_timeout>; \
                 require-prior-idle-ms = <combo_prioridle>; \
-                layers = <combo_layers>;
+                layers = <combo_layers>; \
             }; \
         }; \
     };
-
-#define Z_PLACEHOLDER
