@@ -13,6 +13,6 @@
                 bindings = <&kp regular_binding>, <&kp morph_binding>; \
                 mods = <(MOD_RALT)>; \
                 keep-mods = <keep_mods>; \
-            }; \
+            };
         }; \
     };
