@@ -115,7 +115,6 @@ MM_ACCENT(_mma_p,       P,      F23)
                 layers = <combo_layers>; \
                 timeout-ms = <combo_timeout>; \
                 require-prior-idle-ms = <combo_prioridle>; \
-                COMBO_HOOK \
             }; \
         }; \
     };
