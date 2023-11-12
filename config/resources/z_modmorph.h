@@ -5,7 +5,7 @@
 
 /* mod-morph, idea from caksoylar: https://github.com/caksoylar */
 
-#define Z_ACCENT(name, regular_binding, morph_binding, morph_mods, keep_mods) \
+#define Z_MODMORPH(name, regular_binding, morph_binding, morph_mods) \
     / { \
         behaviors { \
             name: name { \
@@ -14,7 +14,6 @@
                 #binding-cells = <0>; \
                 bindings = <&kp regular_binding>, <&kp morph_binding>; \
                 mods = <morph_mods>; \
-                keep-mods = <keep_mods>; \
             }; \
         }; \
     };
