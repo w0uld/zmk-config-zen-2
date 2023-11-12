@@ -26,8 +26,10 @@
 #define _COMBO_LONG 50
 
 /* miscellaneous */
+#undef Z_ALL
 #define Z_ALL       0 1 2 3 4 5
 #define _NUMBERS    N0 N1 N2 N3 N4 N5 N6 N7 N8 N9
+#define _NUMPAD     KP_N0 KP_N1 KP_N2 KP_N3 KP_N4 KP_N5 KP_N6 KP_N7 KP_N8 KP_N9 KP_DOT KP_EQUAL KP_DIVIDE KP_MULTIPLY KP_MINUS KP_ENTER
 
 /* key matrix setup */
 / {
@@ -67,22 +69,6 @@
         };
     };
 };
-
-
-/* num_word: https://github.com/zmkfirmware/zmk/pull/1451 */
-
-/ {
-    behaviors {
-        num_word: behavior_num_word {
-            compatible = "zmk,behavior-caps-word";
-            label = "NUM_WORD";
-            #binding-cells = <0>;
-            layers = <NMBR>;                                // insert location of numbers layer here
-            continue-list = <BACKSPACE DELETE DOT COMMA EQUAL FSLH MINUS KP_DOT _NUMBERS LSHFT>;
-        };
-    };
-};
-
 
 /* autoshift */
 #define AS(keycode) &z_autoshift LS(keycode) keycode
