@@ -124,6 +124,7 @@ MM_ACCENT(_mma_p,       P,      F23)
         }; \
     };
 
+/*
 Z_COMBO(combo_esc,          AS(ESC),        LT5 LT4,     ALL, _COMBO_SHRT, _PRIOR_IDLE)
 Z_COMBO(combo_backslash,    AS(BSLH),       LB5 LB4,     ALL, _COMBO_SHRT, _PRIOR_IDLE)
 Z_COMBO(combo_grave,        AS(GRAVE),      LH2 LH1,     ALL, _COMBO_SHRT, _PRIOR_IDLE)
@@ -149,7 +150,7 @@ Z_COMBO(combo_bltth2,       &bt BT_SEL 1,   LT2 LB2,     ALL, _COMBO_SHRT, _PRIO
 Z_COMBO(combo_bltth3,       &bt BT_SEL 2,   LT2 LB3,     ALL, _COMBO_SHRT, _PRIOR_IDLE)
 Z_COMBO(combo_bltth4,       &bt BT_SEL 3,   LT2 LB4,     ALL, _COMBO_SHRT, _PRIOR_IDLE)
 Z_COMBO(combo_github,       &macro_github,  RT0 RM0 RB0, ALL, _COMBO_SHRT, _PRIOR_IDLE)
-
+*/
 
 /* Macros */
 / {
