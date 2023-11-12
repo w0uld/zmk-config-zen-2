@@ -83,13 +83,17 @@
 
 /* Mod-Morph setup (credit goes to caksoylar) */
 #define MM_ACCENT(name, regular_binding, morph_binding) \
+ / { \
+        behaviors { \
             name: name { \
                 compatible = "zmk,behavior-mod-morph"; \
                 label = ZMK_MACRO_STRINGIFY(_mma_ ## name); \
                 #binding-cells = <0>; \
                 bindings = <&kp regular_binding>, <&kp morph_binding>; \
                 mods = <(MOD_RALT)>; \
-            };
+            }; \
+        }; \
+    };
 
 MM_ACCENT(_mma_a,       A,      F15)
 MM_ACCENT(_mma_o,       O,      F16)
