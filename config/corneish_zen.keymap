@@ -77,6 +77,7 @@
             tapping_term_ms = <_TAPTERM_MS>;
             bindings = <&kp>, <&kp>;
         };
+    };
 };
 
 
