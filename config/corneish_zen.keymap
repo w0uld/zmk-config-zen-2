@@ -123,10 +123,10 @@ Z_COMBO(combo_layergame,    &tog GAME,      LH0 RH0,         _COMBO_SHRT, _PRIOR
 Z_COMBO(combo_layerqwer,    &tog QWER,      LH1 RH1,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
 
 Z_COMBO(combo_bltthclr,     &bt BT_CLR,     RT0 RB0,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
-Z_COMBO(combo_bltth1,       &bt BT_SEL 0,   RT1 RB1,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
-Z_COMBO(combo_bltth2,       &bt BT_SEL 1,   RT2 RB2,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
-Z_COMBO(combo_bltth3,       &bt BT_SEL 2,   RT3 RB3,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
-Z_COMBO(combo_bltth4,       &bt BT_SEL 3,   RT4 RB4,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
+Z_COMBO(combo_bltth1,       &bt BT_SEL 0,   RT4 RB4,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
+Z_COMBO(combo_bltth2,       &bt BT_SEL 1,   RT3 RB3,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
+Z_COMBO(combo_bltth3,       &bt BT_SEL 2,   RT2 RB2,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
+Z_COMBO(combo_bltth4,       &bt BT_SEL 3,   RT1 RB1,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
 
 Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER) // uses z_macro.h
 
