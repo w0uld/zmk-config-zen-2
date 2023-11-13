@@ -6,6 +6,7 @@
 #include "resources/keypos_42keys.h"
 #include "resources/z_combo.h"      // Z_COMBO
 #include "resources/z_modmorph.h"   // Z_MODMORPH
+#include "resources/z_unicode.h"   // Z_MODMORPH
 #include "resources/z_macro.h"      // macro_github
 
 /* layer aliases */
@@ -117,6 +118,19 @@ Z_COMBO(combo_bltth4,       &bt BT_SEL 3,   RT1 RB1,         _COMBO_SHRT, _PRIOR
 Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER) // uses z_macro.h
 
 
+/* unicode, uses z_unicode.h */
+ZMK_UNICODE_PAIR(hu_a_a,        N0, N0,  E, N1,         N0, N0,  C, N1) // á/Á
+ZMK_UNICODE_PAIR(hu_e_a,        N0, N0,  E, N9,         N0, N0,  C, N9) // é/É
+ZMK_UNICODE_PAIR(hu_i_a,        N0, N0,  E,  D,         N0, N0,  C,  D) // í/Í
+ZMK_UNICODE_PAIR(hu_o_a,        N0, N0,  F, N3,         N0, N0,  D, N3) // ó/Ó
+ZMK_UNICODE_PAIR(hu_u_a,        N0, N0,  F,  A,         N0, N0,  D,  A) // ú/Ú
+ZMK_UNICODE_PAIR(hu_o_di,       N0, N0,  F, N6,         N0, N0,  D, N6) // ö/Ö
+ZMK_UNICODE_PAIR(hu_o_da,       N0, N1, N5, N1,         N0, N1, N5, N0) // ő/Ő
+ZMK_UNICODE_PAIR(hu_u_di,       N0, N0,  F,  C,         N0, N0,  D,  C) // ü/Ü
+ZMK_UNICODE_PAIR(hu_u_da,       N0, N1, N7, N1,         N0, N1, N7, N0) // ű/Ű
+
+
+
 /* keymap */
 / {
     keymap {
@@ -201,9 +215,9 @@ Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_SHRT, _PRIOR
                         label = "ACNT";
                         bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-        &trans          &kp F20         &kp F21         &kp F22         &kp F23         &trans              &trans          &trans          &trans          &trans          &trans          &trans
+        &trans          &hu_o_di        &hu_o_da        &hu_u_di        &hu_u_da        &trans              &trans          &trans          &trans          &trans          &trans          &trans
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-        &trans          &kp F15         &kp F16         &kp F17         &kp F18         &kp F19             &trans          &trans          &trans          &trans          &trans          &trans
+        &trans          &hu_a_a         &hu_o_a         &hu_e_a         &hu_u_a         &hu_i_a             &trans          &trans          &trans          &trans          &trans          &trans
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
         &trans          &trans          &trans          &trans          &trans          &trans              &trans          &trans          &trans          &trans          &trans          &kp LSHFT
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
