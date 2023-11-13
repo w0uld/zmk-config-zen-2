@@ -12,7 +12,7 @@
                 compatible = "zmk,behavior-mod-morph"; \
                 label = ZMK_MACRO_STRINGIFY(modmorph_ ## name); \
                 #binding-cells = <0>; \
-                bindings = <&kp regular_binding>, <&kp morph_binding>; \
+                bindings = <regular_binding>, <morph_binding>; \
                 mods = <morph_mods>; \
             }; \
         }; \
