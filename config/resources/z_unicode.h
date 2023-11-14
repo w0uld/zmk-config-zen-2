@@ -1,9 +1,12 @@
 #pragma once
 
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-
 /* unicode, copied from urob: https://github.com/urob/zmk-nodefree-config */
+
+/* define the following variables BEFORE loading the module: 
+ * HOST_OS (will default to "else if undefined")
+ * Z_UNICODE_LEAD  for custom binds
+ * Z_UNICODE_TRAIL for custom binds
+ */
 
 /* ZMK_UNICODE */
 
@@ -12,17 +15,21 @@
         #define OS_UNICODE_LEAD &macro_press &kp LALT      // macOS/Windows-Alt-Codes
     #elif HOST_OS == 1
         #define OS_UNICODE_LEAD &macro_tap &kp LS(LC(U))   // Linux
+    #elif HOST_OS == 9
+        #define OS_UNICODE_LEAD &macro_tap Z_UNICODE_LEAD  // Configurable approach; define before including this module
     #else
         #define OS_UNICODE_LEAD &macro_tap &kp RALT &kp U  // Windows + WinCompose (default)
     #endif
 #endif
 #if !defined OS_UNICODE_TRAIL
     #if HOST_OS == 2
-        #define OS_UNICODE_TRAIL &macro_release &kp LALT  // macOS/Windows-Alt-Codes
+        #define OS_UNICODE_TRAIL &macro_release &kp LALT    // macOS/Windows-Alt-Codes
     #elif HOST_OS == 1
-        #define OS_UNICODE_TRAIL &macro_tap &kp SPACE     // Linux
+        #define OS_UNICODE_TRAIL &macro_tap &kp SPACE       // Linux
+    #elif HOST_OS == 9
+        #define OS_UNICODE_TRAIL &macro_tap Z_UNICODE_TRAIL // Configurable approach; define before including this module
     #else
-        #define OS_UNICODE_TRAIL &macro_tap &kp RET       // Windows + WinCompose (default)
+        #define OS_UNICODE_TRAIL &macro_tap &kp RET         // Windows + WinCompose (default)
     #endif
 #endif
 
