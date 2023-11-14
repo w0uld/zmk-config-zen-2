@@ -6,7 +6,7 @@
 #include "resources/keypos_42keys.h"
 #include "resources/z_combo.h"      // Z_COMBO
 #include "resources/z_modmorph.h"   // Z_MODMORPH
-#include "resources/z_unicode.h"   // Z_MODMORPH
+#include "resources/z_unicode.h"    // ZMK_UNICODE_SINGLE, ZMK_UNICODE_PAIR, requires WinCompose
 #include "resources/z_macro.h"      // macro_github
 
 /* layer aliases */
@@ -118,7 +118,9 @@ Z_COMBO(combo_bltth4,       &bt BT_SEL 3,   RT1 RB1,         _COMBO_SHRT, _PRIOR
 Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER) // uses z_macro.h
 
 
-/* unicode, uses z_unicode.h */
+/* unicode, uses z_unicode.h, requires WinCompose */
+// syntax for regular: #define ZMK_UNICODE_SINGLE(name, L0, L1, L2, L3) 
+// syntax for low/upp: #define ZMK_UNICODE_PAIR(name, L0, L1, L2, L3, U0, U1, U2, U3)
 ZMK_UNICODE_PAIR(hu_a_a,        N0, N0,  E, N1,         N0, N0,  C, N1) // á/Á
 ZMK_UNICODE_PAIR(hu_e_a,        N0, N0,  E, N9,         N0, N0,  C, N9) // é/É
 ZMK_UNICODE_PAIR(hu_i_a,        N0, N0,  E,  D,         N0, N0,  C,  D) // í/Í
