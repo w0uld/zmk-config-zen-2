@@ -6,8 +6,12 @@
 #include "resources/keypos_42keys.h"
 #include "resources/z_combo.h"      // Z_COMBO
 #include "resources/z_modmorph.h"   // Z_MODMORPH
-#include "resources/z_unicode.h"    // ZMK_UNICODE_SINGLE, ZMK_UNICODE_PAIR, requires WinCompose
 #include "resources/z_macro.h"      // macro_github
+
+#define HOST_OS 9
+#define Z_UNICODE_LEAD  &macro_tap &kp RA(U)
+#define Z_UNICODE_TRAIL &macro_tap &kp SPACE
+#include "resources/z_unicode.h"    // ZMK_UNICODE_SINGLE, ZMK_UNICODE_PAIR, requires WinCompose
 
 /* layer aliases */
 #define DVRK 0

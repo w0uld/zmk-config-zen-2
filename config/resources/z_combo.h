@@ -1,9 +1,7 @@
 #pragma once
 
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-
 /* combos, idea from urob: https://github.com/urob/zmk-nodefree-config */
+
 #define Z_ALL 0xff
 #define Z_COMBO(name, combo_bindings, keypos, combo_timeout, combo_prioridle, combo_layers) \
     / { \

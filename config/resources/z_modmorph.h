@@ -1,8 +1,5 @@
 #pragma once
 
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-
 /* mod-morph, idea from caksoylar: https://github.com/caksoylar */
 
 #define Z_MODMORPH(name, regular_binding, morph_binding, morph_mods) \

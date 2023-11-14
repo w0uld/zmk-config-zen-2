@@ -1,11 +1,11 @@
 #pragma once
 
-/* unicode, copied from urob: https://github.com/urob/zmk-nodefree-config */
+/* unicode, copied & modified from urob: https://github.com/urob/zmk-nodefree-config */
 
 /* define the following variables BEFORE loading the module: 
  * HOST_OS (will default to "else if undefined")
- * Z_UNICODE_LEAD  for custom binds
- * Z_UNICODE_TRAIL for custom binds
+ * Z_UNICODE_LEAD  for custom binds (assuming HOST_OS == 9)
+ * Z_UNICODE_TRAIL for custom binds (assuming HOST_OS == 9)
  */
 
 /* ZMK_UNICODE */
