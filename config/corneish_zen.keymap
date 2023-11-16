@@ -113,7 +113,7 @@
             flavor = "hold-preferred";  // hold-preferred vs regular layer binds
             quick_tap_ms = <_TIME_ZERO>;
             tapping_term_ms = <_TAPTERM_MS>;
-            bindings = <&sl NMBR>, <&num_word>;
+            bindings = <&mo NMBR>, <&num_word>;
             retro-tap;
         };
     };
