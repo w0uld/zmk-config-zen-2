@@ -80,7 +80,7 @@ ZMK_BEHAVIOR(z_autoshift, hold_tap,
 )
 
 
-/* num_word, requires urob's PR #1451 */
+/* smart_num, requires urob's PR #1451 */
 #define SMART_NUMBER &z_smartnumber NMBR 0
 
 &num_word {
@@ -97,8 +97,8 @@ ZMK_BEHAVIOR(z_smartnumber, hold_tap,
     retro-tap;
 )
 
-/* smartnav, requires urob's PR #1451 */
-ZMK_BEHAVIOR(nav_word, caps_word
+/* smart_nav, requires urob's PR #1451 */
+ZMK_BEHAVIOR(nav_word, caps_word,
     layers = <NAVI>;
     continue-list = <_IGNORE_OTHERS _IGNORE_NAVGTN _IGNORE_NUMPAD>;
     ignore-modifiers;
