@@ -10,9 +10,9 @@
 
 /* userspace modules */
 #include "resources/keypos_42keys.h"
-#include "resources/z_combo.h"      // Z_COMBO
-#include "resources/z_modmorph.h"   // Z_MODMORPH
 #include "resources/z_macro.h"      // macro_github
+#include "resources/z_combo.h"      // Z_COMBO
+#include "resources/z_behavior.h"   // Z_HOLDTAP
 
 #define HOST_OS 9
 #define Z_UNICODE_LEAD  &macro_tap &kp RA(U)
@@ -39,8 +39,9 @@
 /* miscellaneous */
 #undef Z_ALL
 #define Z_ALL       DVRK QWER GAME NMBR NAVI
-#define _NUMBERS    N0 N1 N2 N3 N4 N5 N6 N7 N8 N9
-#define _NUMPAD     KP_N0 KP_N1 KP_N2 KP_N3 KP_N4 KP_N5 KP_N6 KP_N7 KP_N8 KP_N9 KP_DOT KP_EQUAL KP_DIVIDE KP_MULTIPLY KP_MINUS KP_ENTER
+#define _IGNORE_NUMBER     N0 N1 N2 N3 N4 N5 N6 N7 N8 N9
+#define _IGNORE_NUMPAD     KP_N0 KP_N1 KP_N2 KP_N3 KP_N4 KP_N5 KP_N6 KP_N7 KP_N8 KP_N9 KP_DOT KP_EQUAL KP_DIVIDE KP_MULTIPLY KP_MINUS KP_ENTER
+#define _IGNORE_OTHERS     BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL
 
 /* key matrix setup */
 / {
@@ -65,60 +66,35 @@
     retro-tap;                  //enabling retro-tap
 };
 
-/* behaviors */
-/ {
-    behaviors {
-        _lt: alternative_layer_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "ALT_LAYERTAP";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";  // hold-preferred vs regular layer binds
-            quick_tap_ms = <_TIME_ZERO>;
-            tapping_term_ms = <_TAPTERM_MS>;
-            bindings = <&mo>, <&kp>;
-            retro-tap;
-        };
-    };
-};
 
 /* autoshift */
 #define AS(keycode) &z_autoshift LS(keycode) keycode
-/ {
-    behaviors {
-        z_autoshift: z_autoshift {
-            compatible = "zmk,behavior-hold-tap";
-            label = "AUTOSHIFT";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            quick_tap_ms = <_QUIKTAP_MS>;
-            tapping_term_ms = <_TAPTERM_MS>;
-            bindings = <&kp>, <&kp>;
-        };
-    };
-};
+
+ZMK_BEHAVIOR(z_autoshift, hold_tap,
+    flavor = "tap-preferred";
+    quick-tap-ms = <_QUIKTAP_MS>;
+    tapping-term-ms = <_TAPTERM_MS>;
+    bindings = <&kp>, <&kp>;
+)
 
 
 /* num-word, requires urob's PR #1451 */
+#define SMART_NUMBER &z_smartnumber NMBR 0
+
 &num_word {
     layers = <NMBR>;
-    continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
+    continue-list = <_IGNORE_NUMBER _IGNORE_NUMPAD _IGNORE_OTHERS>;
+    ignore-modifiers;
 };
 
-#define SMART_NUMBER &smart_number NMBR 0
-/ {
-    behaviors {
-        smart_number: smart_number {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SMART_NUMBER";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";  // hold-preferred vs regular layer binds
-            quick_tap_ms = <_TIME_ZERO>;
-            tapping_term_ms = <_TAPTERM_MS>;
-            bindings = <&mo>, <&num_word>;
-            retro-tap;
-        };
-    };
-};
+ZMK_BEHAVIOR(z_smartnumber, hold_tap,
+    flavor = "hold-preferred";
+    quick-tap-ms = <_TIME_ZERO>;
+    tapping-term-ms = <_TAPTERM_MS>;
+    bindings = <&mo>, <&num_word>;
+    retro-tap;
+)
+
 
 /* combos, uses z_combo.h */
 // syntax: Z_COMBO(name, combo_bindings, keypos, combo_timeout, combo_prioridle, combo_layers)
