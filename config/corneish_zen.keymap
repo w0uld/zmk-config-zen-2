@@ -80,7 +80,7 @@ ZMK_BEHAVIOR(z_autoshift, hold_tap,
 )
 
 
-/* num-word, requires urob's PR #1451 */
+/* num_word, requires urob's PR #1451 */
 #define SMART_NUMBER &z_smartnumber NMBR 0
 
 &num_word {
@@ -95,6 +95,13 @@ ZMK_BEHAVIOR(z_smartnumber, hold_tap,
     tapping-term-ms = <_TAPTERM_MS>;
     bindings = <&mo>, <&num_word>;
     retro-tap;
+)
+
+/* smartnav, requires urob's PR #1451 */
+ZMK_BEHAVIOR(nav_word, caps_word
+    layers = <NAVI>;
+    continue-list = <_IGNORE_OTHERS _IGNORE_NAVGTN>;
+    ignore-modifiers;
 )
 
 
@@ -118,7 +125,7 @@ Z_COMBO(combo_lockscrl,     &kp SLCK,       RT5 RB5,         _COMBO_SHRT, _PRIOR
 
 Z_COMBO(combo_layergame,    &tog GAME,      LH0 RH0,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER GAME)
 Z_COMBO(combo_layerqwer,    &tog QWER,      LH2 RH2,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
-Z_COMBO(combo_layernavi,    &tog NAVI,      RH0 RH2,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER NAVI)
+Z_COMBO(combo_layernavi,    &nav_word,      RH0 RH2,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER NAVI)
 
 Z_COMBO(combo_bltthclr,     &bt BT_CLR,     RT0 RB0,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
 Z_COMBO(combo_bltth1,       &bt BT_SEL 0,   RT4 RB4,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
