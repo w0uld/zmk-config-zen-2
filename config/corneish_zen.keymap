@@ -100,7 +100,7 @@ ZMK_BEHAVIOR(z_smartnumber, hold_tap,
 /* smartnav, requires urob's PR #1451 */
 ZMK_BEHAVIOR(nav_word, caps_word
     layers = <NAVI>;
-    continue-list = <_IGNORE_OTHERS _IGNORE_NAVGTN>;
+    continue-list = <_IGNORE_OTHERS _IGNORE_NAVGTN _IGNORE_NUMPAD>;
     ignore-modifiers;
 )
 
