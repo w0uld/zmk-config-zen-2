@@ -104,9 +104,10 @@
     continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
 };
 
+#define SMART_NUMBER &smart_number NMBR 0
 / {
     behaviors {
-        smart_nmbr: smart_number {
+        smart_number: smart_number {
             compatible = "zmk,behavior-hold-tap";
             label = "SMART_NUMBER";
             #binding-cells = <2>;
@@ -179,7 +180,7 @@ ZMK_UNICODE_PAIR(hu_u_da,       N0, N1, N7, N1,         N0, N1, N7, N0) // ű/Ű
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
         &kp LSHFT       &kp SEMI        &kp Q           &kp J           &kp K           &kp X               &kp B           &kp M           &kp W           &kp V           &kp Z       &mt LSHFT EQUAL
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                                        &kp LALT        &kp SPACE       &smart_nmbr      &lt NAVI BSPC      &sl ACNT      &mt LGUI RET
+                                                        &kp LALT        &kp SPACE     SMART_NUMBER       &lt NAVI BSPC      &sl ACNT      &mt LGUI RET
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
                         >;
                 };
