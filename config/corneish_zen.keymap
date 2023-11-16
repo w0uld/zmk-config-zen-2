@@ -38,10 +38,12 @@
 
 /* miscellaneous */
 #undef Z_ALL
-#define Z_ALL       DVRK QWER GAME NMBR NAVI
+#define Z_ALL              DVRK QWER GAME NMBR NAVI
 #define _IGNORE_NUMBER     N0 N1 N2 N3 N4 N5 N6 N7 N8 N9
 #define _IGNORE_NUMPAD     KP_N0 KP_N1 KP_N2 KP_N3 KP_N4 KP_N5 KP_N6 KP_N7 KP_N8 KP_N9 KP_DOT KP_EQUAL KP_DIVIDE KP_MULTIPLY KP_MINUS KP_ENTER
-#define _IGNORE_OTHERS     BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL
+#define _IGNORE_NAVGTN     LEFT RIGHT UP DOWN PG_UP PG_DN HOME END
+#define _IGNORE_SYMBOL     DOT COMMA PLUS MINUS STAR FSLH EQUAL
+#define _IGNORE_OTHERS     BSPC DEL
 
 /* key matrix setup */
 / {
@@ -83,7 +85,7 @@ ZMK_BEHAVIOR(z_autoshift, hold_tap,
 
 &num_word {
     layers = <NMBR>;
-    continue-list = <_IGNORE_NUMBER _IGNORE_NUMPAD _IGNORE_OTHERS>;
+    continue-list = <_IGNORE_NUMBER _IGNORE_NUMPAD _IGNORE_OTHERS _IGNORE_NAVGTN _IGNORE_SYMBOL>;
     ignore-modifiers;
 };
 
@@ -116,6 +118,7 @@ Z_COMBO(combo_lockscrl,     &kp SLCK,       RT5 RB5,         _COMBO_SHRT, _PRIOR
 
 Z_COMBO(combo_layergame,    &tog GAME,      LH0 RH0,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER GAME)
 Z_COMBO(combo_layerqwer,    &tog QWER,      LH2 RH2,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
+Z_COMBO(combo_layernavi,    &tog NAVI,      RH0 RH2,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER NAVI)
 
 Z_COMBO(combo_bltthclr,     &bt BT_CLR,     RT0 RB0,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
 Z_COMBO(combo_bltth1,       &bt BT_SEL 0,   RT4 RB4,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
@@ -127,8 +130,8 @@ Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_SHRT, _PRIOR
 
 
 /* unicode, uses z_unicode.h, requires WinCompose */
-// syntax for regular: #define ZMK_UNICODE_SINGLE(name, L0, L1, L2, L3) 
-// syntax for low/upp: #define ZMK_UNICODE_PAIR(name, L0, L1, L2, L3, U0, U1, U2, U3)
+// syntax for regular case:  #define ZMK_UNICODE_SINGLE(name, L0, L1, L2, L3) 
+// syntax for low/uppercase: #define   ZMK_UNICODE_PAIR(name, L0, L1, L2, L3, U0, U1, U2, U3)
 ZMK_UNICODE_PAIR(hu_a_a,        N0, N0,  E, N1,         N0, N0,  C, N1) // á/Á
 ZMK_UNICODE_PAIR(hu_e_a,        N0, N0,  E, N9,         N0, N0,  C, N9) // é/É
 ZMK_UNICODE_PAIR(hu_i_a,        N0, N0,  E,  D,         N0, N0,  C,  D) // í/Í
@@ -138,7 +141,6 @@ ZMK_UNICODE_PAIR(hu_o_di,       N0, N0,  F, N6,         N0, N0,  D, N6) // ö/Ö
 ZMK_UNICODE_PAIR(hu_o_da,       N0, N1, N5, N1,         N0, N1, N5, N0) // ő/Ő
 ZMK_UNICODE_PAIR(hu_u_di,       N0, N0,  F,  C,         N0, N0,  D,  C) // ü/Ü
 ZMK_UNICODE_PAIR(hu_u_da,       N0, N1, N7, N1,         N0, N1, N7, N0) // ű/Ű
-
 
 
 /* keymap */
