@@ -18,11 +18,11 @@
     - name: urob
       url-base: https://github.com/urob
   projects:
-    - name: zmk
+    - name: zmk-caksoylar
       remote: caksoylar
       revision: caksoylar/zen-v1+v2+experimental
       import: app/west.yml
-    - name: zmk
+    - name: zmk-urob
       remote: urob
       revision: main
       import: app/west.yml
