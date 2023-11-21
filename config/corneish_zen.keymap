@@ -80,15 +80,17 @@ ZMK_BEHAVIOR(z_autoshift, hold_tap,
 )
 
 
+/* smart_nav, requires urob's PR #1451 */
+ZMK_BEHAVIOR(nav_word, caps_word,
+    layers = <NAVI>;
+    continue-list = <_IGNORE_OTHERS _IGNORE_NAVGTN _IGNORE_NUMPAD>;
+    ignore-modifiers;
+)
+
+
 /* smart_num, requires urob's PR #1451 */
 /* tap: space | double tap: num-word | hold: num-layer */
 #define SMART_NUMBER &z_smartnumber NMBR 0
-
-&num_word {
-    layers = <NMBR>;
-    continue-list = <_IGNORE_NUMBER _IGNORE_NUMPAD _IGNORE_OTHERS _IGNORE_NAVGTN _IGNORE_SYMBOL>;
-    ignore-modifiers;
-};
 ZMK_BEHAVIOR(z_smartnumber, hold_tap,
     flavor = "hold-preferred";
     quick-tap-ms = <_TIME_ZERO>;
@@ -100,14 +102,11 @@ ZMK_BEHAVIOR(num_dance, tap_dance,
     tapping-term-ms = <_QUIKTAP_MS>;
     bindings = <&kp SPACE>, <&num_word>;  // reverse this for sticky-num on single tap
 )
-
-
-/* smart_nav, requires urob's PR #1451 */
-ZMK_BEHAVIOR(nav_word, caps_word,
-    layers = <NAVI>;
-    continue-list = <_IGNORE_OTHERS _IGNORE_NAVGTN _IGNORE_NUMPAD>;
+&num_word {
+    layers = <NMBR>;
+    continue-list = <_IGNORE_NUMBER _IGNORE_NUMPAD _IGNORE_OTHERS _IGNORE_NAVGTN _IGNORE_SYMBOL>;
     ignore-modifiers;
-)
+};
 
 
 /* combos, uses z_combo.h */
