@@ -91,7 +91,7 @@ ZMK_BEHAVIOR(nav_word, caps_word,
 /* smart_num, requires urob's PR #1451 */
 /* tap: space | double tap: num-word | hold: num-layer */
 #define SMART_NUMBER &z_smartnumber NMBR 0
-=ZMK_BEHAVIOR(z_smartnumber, hold_tap,
+ZMK_BEHAVIOR(z_smartnumber, hold_tap,
     flavor = "hold-preferred";
     quick-tap-ms = <_TIME_ZERO>;
     tapping-term-ms = <_TAPTERM_MS>;
