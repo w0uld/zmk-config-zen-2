@@ -91,7 +91,7 @@ ZMK_BEHAVIOR(nav_word, caps_word,
 /* smart_num, requires urob's PR #1451 */
 /* tap: space | double tap: num-word | hold: num-layer */
 #define SMART_NUMBER &z_smartnumber NMBR 0
-ZMK_BEHAVIOR(z_smartnumber, hold_tap,
+=ZMK_BEHAVIOR(z_smartnumber, hold_tap,
     flavor = "hold-preferred";
     quick-tap-ms = <_TIME_ZERO>;
     tapping-term-ms = <_TAPTERM_MS>;
@@ -123,9 +123,9 @@ Z_COMBO(combo_rctrl,        &sk LCTRL,      RM1 RM2,         _COMBO_SHRT, _PRIOR
 Z_COMBO(combo_lctrlshift,   &sk LS(LCTRL),  LM1 LM2 LM3,     _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
 Z_COMBO(combo_rctrlshift,   &sk LS(LCTRL),  RM1 RM2 RM3,     _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
 
-Z_COMBO(combo_locknum0,     &kp KP_NLCK,    RM5 RT5,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER)
-Z_COMBO(combo_lockcaps,     &kp CLCK,       RM5 RB5,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER)
-Z_COMBO(combo_lockscrl,     &kp SLCK,       RT5 RB5,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER)
+Z_COMBO(combo_locknum0,     &kp KP_NLCK,    RH0 RT5,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER)
+Z_COMBO(combo_lockcaps,     &kp CLCK,       RH0 RM5,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER)
+Z_COMBO(combo_lockscrl,     &kp SLCK,       RH0 RB5,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER)
 
 Z_COMBO(combo_layergame,    &tog GAME,      LH0 RH0,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER GAME)
 Z_COMBO(combo_layerqwer,    &tog QWER,      LH2 RH2,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER)
