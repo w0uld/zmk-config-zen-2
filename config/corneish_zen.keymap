@@ -111,7 +111,7 @@ ZMK_BEHAVIOR(num_dance, tap_dance,
 
 /* combos, uses z_combo.h */
 // syntax: Z_COMBO(name, combo_bindings, keypos, combo_timeout, combo_prioridle, combo_layers)
-Z_COMBO(combo_esc,          AS(ESC),        LT5 LT4,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
+Z_COMBO(combo_esc,          AS(ESC),        LT5 LT4,         _COMBO_MEDM, _TIME_ZERO,  Z_ALL)
 Z_COMBO(combo_backslash,    AS(BSLH),       LB5 LB4,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
 Z_COMBO(combo_grave,        AS(GRAVE),      LH2 LH1,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
 
