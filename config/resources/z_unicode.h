@@ -8,6 +8,16 @@
  * Z_UNICODE_TRAIL for custom binds (assuming HOST_OS == 9)
  */
 
+
+/* // EXAMPLE
+    #define HOST_OS 9
+    #define Z_UNICODE_LEAD  &macro_tap &kp RA(U)
+    #define Z_UNICODE_TRAIL &macro_tap &kp SPACE
+    #include "resources/z_unicode.h"
+    #include "resources/z_unicode_HUNchars.h"
+*/
+
+
 /* ZMK_UNICODE */
 
 #if !defined OS_UNICODE_LEAD

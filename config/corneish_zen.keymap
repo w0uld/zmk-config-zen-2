@@ -14,21 +14,12 @@
 #include "resources/z_combo.h"      // Z_COMBO
 #include "resources/z_behavior.h"   // Z_HOLDTAP
 
-/*
-#define HOST_OS 9
-#define Z_UNICODE_LEAD  &macro_tap &kp RA(U)
-#define Z_UNICODE_TRAIL &macro_tap &kp SPACE
-#include "resources/z_unicode.h"    // ZMK_UNICODE_SINGLE, ZMK_UNICODE_PAIR, requires WinCompose
-#include "resources/z_unicode_HUNchars.h"
-*/
-
 /* layer aliases */
 #define DVRK 0
 #define QWER 1
 #define GAME 2
 #define NMBR 3
 #define NAVI 4
-#define ACNT 5
 
 /* variables */
 #define _TIME_ZERO  0
@@ -220,21 +211,6 @@ Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_MEDM, _PRIOR
         &trans          &kp F9          &kp F10         &kp F11         &kp F12         &kp F14             &kp INS       &kp C_VOL_DN      &kp C_MUTE    &kp C_VOL_UP      &kp C_PP        &kp LSHFT
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
                                                         &trans          &trans          &trans              &trans          &kp DEL         &trans
-//                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
-                        >;
-                };
-
-                accent_layer {
-                        label = "ACNT";
-                        bindings = <
-// ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-        &trans       &kp RA(APOS)    &kp RA(COMMA)      &kp RA(DOT)     &kp RA(P)       &trans              &trans          &trans          &trans          &trans          &trans          &trans
-// ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-        &trans          &kp RA(A)       &kp RA(O)       &kp RA(E)       &kp RA(U)       &kp RA(I)           &trans          &trans          &trans          &trans          &trans          &trans
-// ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-        &trans          &trans          &trans          &trans          &trans          &trans              &trans          &trans          &trans          &trans          &trans          &kp LSHFT
-// ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                                        &trans          &trans          &trans              &trans          &trans          &kp RALT
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
                         >;
                 };
