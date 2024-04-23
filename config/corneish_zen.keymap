@@ -9,10 +9,10 @@
 #include <dt-bindings/zmk/bt.h>
 
 /* userspace modules */
-#include "resources/keypos_42keys.h"
-#include "resources/z_macro.h"      // macro_github
-#include "resources/z_combo.h"      // Z_COMBO
-#include "resources/z_behavior.h"   // Z_HOLDTAP
+#include "resources/keypos_42keys.h" // human readable bindings
+#include "resources/z_macro.h"       // macro_github
+#include "resources/z_combo.h"       // Z_COMBO
+#include "resources/z_behavior.h"    // Z_HOLDTAP
 
 /* layer aliases */
 #define DVRK 0
@@ -117,6 +117,9 @@ Z_COMBO(combo_bltth1,       &bt BT_SEL 0,   RT4 RB4,         _COMBO_LONG, _PRIOR
 Z_COMBO(combo_bltth2,       &bt BT_SEL 1,   RT3 RB3,         _COMBO_LONG, _PRIOR_IDLE, DVRK QWER)
 Z_COMBO(combo_bltth3,       &bt BT_SEL 2,   RT2 RB2,         _COMBO_LONG, _PRIOR_IDLE, DVRK QWER)
 Z_COMBO(combo_bltth4,       &bt BT_SEL 3,   RT1 RB1,         _COMBO_LONG, _PRIOR_IDLE, DVRK QWER)
+
+Z_COMBO(combo_offleft,      &soft_off,      LB0 LB5,         _COMBO_LONG, _PRIOR_IDLE, DVRK QWER)
+Z_COMBO(combo_offright,     &soft_off,      RB0 RB5,         _COMBO_LONG, _PRIOR_IDLE, DVRK QWER)
 
 Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER) // uses z_macro.h
 
