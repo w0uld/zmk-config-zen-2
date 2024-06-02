@@ -97,10 +97,10 @@ Z_COMBO(combo_locknum0,     &kp KP_NLCK,    RH0 RT5,         _COMBO_MEDM, _PRIOR
 Z_COMBO(combo_lockcaps,     &kp CLCK,       RH0 RM5,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER)
 Z_COMBO(combo_lockscrl,     &kp SLCK,       RH0 RB5,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER)
 
-Z_COMBO(combo_layergame,    &tog GAME,      LH0 RH0,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER GAME)
+Z_COMBO(combo_layergame,    &tog GAME,      LH0 RH0,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
 Z_COMBO(combo_layerqwer,    &tog QWER,      LH2 RH2,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER)
-Z_COMBO(combo_layernmbr,    &num_word,      LH0 LH2,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER NAVI) // uses special module
-Z_COMBO(combo_layernavi,    &nav_word,      RH0 RH2,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER NAVI) // uses special module
+Z_COMBO(combo_layernmbr,    &num_word,      LH0 LH2,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL) // uses special module
+Z_COMBO(combo_layernavi,    &nav_word,      RH0 RH2,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL) // uses special module
 
 Z_COMBO(combo_bltthclr,     &bt BT_CLR,     RT0 RB0,         _COMBO_LONG, _PRIOR_IDLE, DVRK QWER)
 Z_COMBO(combo_bltth1,       &bt BT_SEL 0,   RT4 RB4,         _COMBO_LONG, _PRIOR_IDLE, DVRK QWER)
