@@ -16,3 +16,14 @@
             }; \
         }; \
     };
+
+
+
+
+/* 
+// Example Usage in Keymap: 
+
+// syntax: Z_COMBO(name, combo_bindings, keypos, combo_timeout, combo_prioridle, combo_layers)
+Z_COMBO(      combo_esc,        &kp ESC,    0 1,            50,               0,        Z_ALL)
+
+*/
