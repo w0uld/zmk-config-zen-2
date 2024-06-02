@@ -9,9 +9,11 @@
               ╰────────────┴────────────╯                         ╰─────────────┴─────────────╯             */
 
 /* key matrix setup */
-chosen {
-    zmk,matrix_transform = &default_transform;
- // zmk,matrix_transform = &five_column_transform;
+/{
+  chosen {
+      zmk,matrix_transform = &default_transform;
+   // zmk,matrix_transform = &five_column_transform;
+  };
 };
 
 
