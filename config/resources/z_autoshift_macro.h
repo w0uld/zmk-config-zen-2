@@ -6,7 +6,6 @@
   behaviors {
     as_ht: autoshift_hold_tap {
       compatible = "zmk,behavior-hold-tap";
-      label = "AUTOSHIFT_HOLD_TAP";
       flavor = "tap-preferred";
       quick-tap-ms = <250>;
       tapping-term-ms = <200>;
@@ -18,7 +17,6 @@
   macros {
     shifted: macro_shifted_kp {
       #binding-cells = <1>;
-      label = "MACRO_SHIFTED_KP";
       compatible = "zmk,behavior-macro-one-param";
       tap-ms = <10>;
       wait-ms = <5>;
@@ -31,7 +29,6 @@
     as: autoshift {
       compatible = "zmk,behavior-macro-one-param";
       #binding-cells = <1>;
-      label = "AUTOSHIFT_KP";
       bindings =
         <&macro_press>,
         <&macro_param_1to1>,

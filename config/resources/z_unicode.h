@@ -48,7 +48,6 @@
         macros { \
             name: name { \
                 compatible = "zmk,behavior-macro"; \
-                label = ZMK_MACRO_STRINGIFY(UC_MACRO_ ## name); \
                 wait-ms = <0>; \
                 tap-ms = <0>; \
                 #binding-cells = <0>; \

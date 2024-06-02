@@ -7,7 +7,6 @@
         behaviors { \
             name: name { \
                 compatible = "zmk,behavior-mod-morph"; \
-                label = ZMK_MACRO_STRINGIFY(modmorph_ ## name); \
                 #binding-cells = <0>; \
                 bindings = <regular_binding>, <morph_binding>; \
                 mods = <morph_mods>; \
