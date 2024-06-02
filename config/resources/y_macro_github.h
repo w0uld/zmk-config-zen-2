@@ -5,7 +5,6 @@
 / {
     macros {
         macro_github: macro_github {
-            label = "macro_github";
             compatible = "zmk,behavior-macro";
             tap-ms = <2>;
             wait-ms = <1>;

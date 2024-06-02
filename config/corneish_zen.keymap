@@ -50,15 +50,15 @@
 
 /* adjustments */
 &mt {
-    quick_tap_ms = <_QUIKTAP_MS>;
-    tapping_term_ms = <_TAPTERM_MS>;
+    quick-tap-ms = <_QUIKTAP_MS>;
+    tapping-term-ms = <_TAPTERM_MS>;
     flavor = "hold-preferred";  //originally balanced
     retro-tap;                  //enabling retro-tap
 };
 
 &lt {
-    quick_tap_ms = <_QUIKTAP_MS>;
-    tapping_term_ms = <_TAPTERM_MS>;
+    quick-tap-ms = <_QUIKTAP_MS>;
+    tapping-term-ms = <_TAPTERM_MS>;
     flavor = "balanced";
     retro-tap;                  //enabling retro-tap
 };
@@ -117,7 +117,7 @@ Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_MEDM, _PRIOR
             compatible = "zmk,keymap";
 
                 dvorak_layer {
-                        label = "DVRK";
+//                      label = "DVRK";
                         bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
       &lt NAVI TAB      &kp APOS        &kp COMMA       &kp DOT         &kp P           &kp Y               &kp F           &kp G           &kp C           &kp R           &kp L           &kp FSLH
@@ -132,7 +132,7 @@ Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_MEDM, _PRIOR
                 };
 
                 qwerty_layer {
-                        label = "QWER";
+//                      label = "QWER";
                         bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
         &trans          &kp Q           &kp W           &kp E           &kp R           &kp T               &kp Y           &kp U           &kp I           &kp O           &kp P           &kp LBKT
@@ -147,7 +147,7 @@ Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_MEDM, _PRIOR
                 };
 
                 gaming_layer {
-                        label = "GAME";
+//                      label = "GAME";
                         bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
         &trans          &kp T           &kp Q           &kp W           &kp E           &kp R               &kp Y           &kp PG_UP       &kp UP          &kp PG_DN       &kp P           &trans
@@ -162,7 +162,7 @@ Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_MEDM, _PRIOR
                 };
 
                 number_layer {
-                        label = "NMBR";
+//                      label = "NMBR";
                         bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
         &trans          AS(N1)          AS(N2)          AS(N3)          AS(N4)          AS(N5)              AS(LPAR)        AS(N7)          AS(N8)          AS(N9)          AS(RPAR)        AS(FSLH)
@@ -177,7 +177,7 @@ Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_MEDM, _PRIOR
                 };
 
                 navigation_layer {
-                        label = "NAVI";
+//                      label = "NAVI";
                         bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
         &trans          &kp F1          &kp F2          &kp F3          &kp F4          &kp F5          &kp PAUSE_BREAK     &kp PG_UP       &kp UP          &kp PG_DN       &kp HOME        &trans
