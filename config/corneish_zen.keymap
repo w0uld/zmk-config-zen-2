@@ -12,7 +12,6 @@
 #include "resources/keypos_42keys.h"            // human readable bindings
 #include "resources/z_behavior.h"               // behavior preprocessor
 #include "resources/z_combo.h"                  // Z_COMBO
-#include "resources/z_autoshift_macro.h"        // autoshift
 #include "resources/y_macro_github.h"           // macro_github
 
 /* layer aliases */
@@ -64,6 +63,17 @@
 };
 
 
+/* autoshift */
+#define AS(keycode) &z_autoshift LS(keycode) keycode
+
+ZMK_BEHAVIOR(z_autoshift, hold_tap,
+    flavor = "tap-preferred";
+    quick-tap-ms = <_QUIKTAP_MS>;
+    tapping-term-ms = <_TAPTERM_MS>;
+    bindings = <&kp>, <&kp>;
+)
+
+
 /* smart_nav, requires urob's PR #1451 */
 ZMK_BEHAVIOR(nav_word, caps_word,
     layers = <NAVI>;
@@ -81,9 +91,9 @@ ZMK_BEHAVIOR(nav_word, caps_word,
 
 /* combos, uses z_combo.h */
 // syntax: Z_COMBO(name, combo_bindings, keypos, combo_timeout, combo_prioridle, combo_layers)
-Z_COMBO(combo_esc,          &as ESC,        LT5 LT4,         _COMBO_MEDM, _TIME_ZERO,  Z_ALL)
-Z_COMBO(combo_backslash,    &as BSLH,       LB5 LB4,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
-Z_COMBO(combo_grave,        &as GRAVE,      LH2 LH1,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
+Z_COMBO(combo_esc,          AS(ESC),        LT5 LT4,         _COMBO_MEDM, _TIME_ZERO,  Z_ALL)
+Z_COMBO(combo_backslash,    AS(BSLH),       LB5 LB4,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
+Z_COMBO(combo_grave,        AS(GRAVE),      LH2 LH1,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
 
 Z_COMBO(combo_copy,         &kp LC(INS),    LB4 LB3 LB2,     _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
 Z_COMBO(combo_paste,        &kp LS(INS),    LB3 LB2 LB1,     _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
@@ -165,13 +175,13 @@ Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_MEDM, _PRIOR
                         label = "NMBR";
                         bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-        &trans          &as N1          &as N2          &as N3          &as N4          &as N5              &as LPAR        &as N7          &as N8          &as N9          &as RPAR        &as FSLH
+        &trans          AS(N1)          AS(N2)          AS(N3)          AS(N4)          AS(N5)              AS(LPAR)        AS(N7)          AS(N8)          AS(N9)          AS(RPAR)        AS(FSLH)
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-        &trans          &kp LGUI        &kp LALT        &kp LCTRL       &kp LSHFT       &kp F13             &as LBKT        &as N4          &as N5          &as N6          &as RBKT        &as MINUS
+        &trans          &kp LGUI        &kp LALT        &kp LCTRL       &kp LSHFT       &kp F13             AS(LBKT)        AS(N4)          AS(N5)          AS(N6)          AS(RBKT)        AS(MINUS)
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-        &trans          &as SEMI        &as APOS        &as COMMA       &as DOT         &kp KP_DOT          &as GRAVE       &as N1          &as N2          &as N3          &as BSLH        &as EQUAL
+        &trans          AS(SEMI)        AS(APOS)        AS(COMMA)       AS(DOT)         &kp KP_DOT          AS(GRAVE)       AS(N1)          AS(N2)          AS(N3)          AS(BSLH)        AS(EQUAL)
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                                        &trans          &trans          &trans              &trans          &as N0          &kp KP_DOT
+                                                        &trans          &trans          &trans              &trans          AS(N0)          &kp KP_DOT
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
                         >;
                 };
