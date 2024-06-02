@@ -6,8 +6,8 @@
     macros {
         macro_github: macro_github {
             compatible = "zmk,behavior-macro";
-            tap-ms = <2>;
-            wait-ms = <1>;
+            tap-ms = <10>;
+            wait-ms = <5>;
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp H &kp T &kp T &kp P &kp S &kp COLON &kp FSLH &kp FSLH>
