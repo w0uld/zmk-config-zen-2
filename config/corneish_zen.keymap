@@ -13,7 +13,7 @@
 #include "resources/z_behavior.h"               // behavior preprocessor
 #include "resources/z_combo.h"                  // Z_COMBO
 #include "resources/y_macro_github.h"           // macro_github
-#include "resources/z_keypress-tapms.h"         // enabling &kpt, &ltt, &mtt for tap-ms
+#include "resources/autoshift_legacy.h"         // autoshift_macro
 
 /* layer aliases */
 #define DVRK 0
@@ -62,17 +62,6 @@
     flavor = "balanced";
     retro-tap;                  //enabling retro-tap
 };
-
-
-/* autoshift */
-#define AS(keycode) &z_autoshift LS(keycode) keycode
-
-ZMK_BEHAVIOR(z_autoshift, hold_tap,
-    flavor = "tap-preferred";
-    quick-tap-ms = <_QUIKTAP_MS>;
-    tapping-term-ms = <_TAPTERM_MS>;
-    bindings = <&kp>, <&kp>;
-)
 
 
 /* smart_nav, requires urob's PR #1451 */
@@ -137,7 +126,7 @@ Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_MEDM, _PRIOR
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
         &kp LSHFT       &kp SEMI        &kp Q           &kp J           &kp K           &kp X               &kp B           &kp M           &kp W           &kp V           &kp Z       &mt LSHFT EQUAL
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                                      &mt LALT F23      &kp SPACE       &sl NMBR         &ltt NAVI BSPC    &mt RALT F24    &mt LGUI RET
+                                                      &mt LALT F23      &kp SPACE       &sl NMBR         &lt NAVI BSPC    &mt RALT F24    &mt LGUI RET
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
                         >;
                 };
