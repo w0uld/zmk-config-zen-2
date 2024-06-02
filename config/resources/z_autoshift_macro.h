@@ -7,8 +7,10 @@
     as_ht: autoshift_hold_tap {
       compatible = "zmk,behavior-hold-tap";
       label = "AUTOSHIFT_HOLD_TAP";
-      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      quick-tap-ms = <250>;
       tapping-term-ms = <200>;
+      #binding-cells = <2>;
       bindings = <&shifted>, <&kp>;
     };
   };
@@ -18,6 +20,8 @@
       #binding-cells = <1>;
       label = "MACRO_SHIFTED_KP";
       compatible = "zmk,behavior-macro-one-param";
+      tap-ms = <10>;
+      wait-ms = <5>;
       bindings =
         <&macro_press &kp LSHFT>,
         <&macro_param_1to1 &macro_tap &kp MACRO_PLACEHOLDER>,
