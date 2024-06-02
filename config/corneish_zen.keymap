@@ -13,6 +13,7 @@
 #include "resources/z_behavior.h"               // behavior preprocessor
 #include "resources/z_combo.h"                  // Z_COMBO
 #include "resources/y_macro_github.h"           // macro_github
+#include "resources/z_keypress-tapms.h"         // enabling &kpt, &ltt, &mtt for tap-ms
 
 /* layer aliases */
 #define DVRK 0
@@ -136,7 +137,7 @@ Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_MEDM, _PRIOR
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
         &kp LSHFT       &kp SEMI        &kp Q           &kp J           &kp K           &kp X               &kp B           &kp M           &kp W           &kp V           &kp Z       &mt LSHFT EQUAL
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                                      &mt LALT F23      &kp SPACE       &sl NMBR         &lt NAVI BSPC    &mt RALT F24    &mt LGUI RET
+                                                      &mt LALT F23      &kp SPACE       &sl NMBR         &ltt NAVI BSPC    &mt RALT F24    &mt LGUI RET
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
                         >;
                 };
