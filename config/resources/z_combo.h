@@ -2,7 +2,7 @@
 
 /* combos, idea from urob: https://github.com/urob/zmk-nodefree-config */
 
-#define Z_ALL 0xff
+// #define Z_ALL 0xff
 #define Z_COMBO(name, combo_bindings, keypos, combo_timeout, combo_prioridle, combo_layers) \
     / { \
         combos { \
@@ -24,6 +24,6 @@
 // Example Usage in Keymap: 
 
 // syntax: Z_COMBO(name, combo_bindings, keypos, combo_timeout, combo_prioridle, combo_layers)
-Z_COMBO(      combo_esc,        &kp ESC,    0 1,            50,               0,        Z_ALL)
+Z_COMBO(      combo_esc,        &kp ESC,    0 1,            50,               0,        0 1 2)
 
 */

@@ -8,6 +8,13 @@
   ╰───────────╮ 36  37  38 │ 39  40  41 ╭───────────╯ ╰───────────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────────╯
               ╰────────────┴────────────╯                         ╰─────────────┴─────────────╯             */
 
+/* key matrix setup */
+chosen {
+    zmk,matrix_transform = &default_transform;
+ // zmk,matrix_transform = &five_column_transform;
+};
+
+
 #pragma once
 
 #define LT0  5  // left-top row

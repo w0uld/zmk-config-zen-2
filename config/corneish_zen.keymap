@@ -9,72 +9,65 @@
 #include <dt-bindings/zmk/bt.h>
 
 /* userspace modules */
-#include "resources/keypos_42keys.h"            // human readable bindings
-#include "resources/z_behavior.h"               // behavior preprocessor
-#include "resources/z_combo.h"                  // Z_COMBO
-#include "resources/z_autoshift_legacy.h"       // autoshift_macro
-#include "resources/y_macro_github.h"           // macro_github
+#include "resources/keypos_42keys.h"        // human readable bindings
+#include "resources/z_behavior.h"           // behavior preprocessor
+#include "resources/z_combo.h"              // Z_COMBO
+#include "resources/z_autoshift_legacy.h"   // autoshift
+#include "resources/y_macro_github.h"       // macro_github
 
 /* layer aliases */
-#define DVRK 0
-#define QWER 1
-#define GAME 2
-#define NMBR 3
-#define NAVI 4
-
-/* variables */
-#define _TIME_ZERO  0
-#define _QUIKTAP_MS 250
-#define _TAPTERM_MS 200
-#define _PRIOR_IDLE 250
-#define _COMBO_SHRT 20
-#define _COMBO_MEDM 30
-#define _COMBO_LONG 50
-
-/* miscellaneous */
+#define DVRK  0
+#define QWER  1
+#define GAME  2
+#define NMBR  3
+#define NAVI  4
 #undef  Z_ALL
-#define Z_ALL              DVRK QWER GAME NMBR NAVI
+#define Z_ALL DVRK QWER GAME NMBR NAVI
+
+/* timings */
+#define _TIME_ZERO   0
+#define _QUIKTAP_MS  250
+#define _TAPTERM_MS  200
+#define _PRIOR_IDLE  250
+#define _COMBO_SHRT  20
+#define _COMBO_MEDM  30
+#define _COMBO_LONG  50
+
+/* ignorecodes */
 #define _IGNORE_NUMBER     N0 N1 N2 N3 N4 N5 N6 N7 N8 N9
 #define _IGNORE_NUMPAD     KP_N0 KP_N1 KP_N2 KP_N3 KP_N4 KP_N5 KP_N6 KP_N7 KP_N8 KP_N9 KP_DOT KP_EQUAL KP_DIVIDE KP_MULTIPLY KP_MINUS KP_PLUS
 #define _IGNORE_NAVGTN     LEFT RIGHT UP DOWN PG_UP PG_DN HOME END
 #define _IGNORE_SYMBOL     DOT COMMA PLUS MINUS STAR FSLH EQUAL SEMI
 #define _IGNORE_OTHERS     BSPC DEL TAB
 
-/* key matrix setup */
-/ {
-    chosen {
-        zmk,matrix_transform = &default_transform;
-        // zmk,matrix_transform = &five_column_transform;
-    };
-};
 
 /* adjustments */
 &mt {
-    quick-tap-ms = <_QUIKTAP_MS>;
+    quick-tap-ms    = <_QUIKTAP_MS>;
     tapping-term-ms = <_TAPTERM_MS>;
-    flavor = "hold-preferred";  //originally balanced
-    retro-tap;                  //enabling retro-tap
+    flavor          = "hold-preferred";  //originally balanced
+    retro-tap;                           //enabling retro-tap
 };
 
 &lt {
-    quick-tap-ms = <_QUIKTAP_MS>;
+    quick-tap-ms    = <_QUIKTAP_MS>;
     tapping-term-ms = <_TAPTERM_MS>;
-    flavor = "balanced";
-    retro-tap;                  //enabling retro-tap
+    flavor          = "balanced";
+    retro-tap;                          //enabling retro-tap
 };
 
 
 /* smart_nav, requires urob's PR #1451 */
 ZMK_BEHAVIOR(nav_word, caps_word,
-    layers = <NAVI>;
-    continue-list = <_IGNORE_OTHERS _IGNORE_NAVGTN _IGNORE_NUMPAD>;
+    layers          = <NAVI>;
+    continue-list   = <_IGNORE_OTHERS _IGNORE_NAVGTN _IGNORE_NUMPAD>;
     ignore-modifiers;
 )
 
 /* smart_num, requires urob's PR #1451 */
 &num_word {
-    layers = <NMBR>;
-    continue-list = <_IGNORE_NUMBER _IGNORE_NUMPAD _IGNORE_OTHERS _IGNORE_NAVGTN _IGNORE_SYMBOL>;
+    layers          = <NMBR>;
+    continue-list   = <_IGNORE_NUMBER _IGNORE_NAVGTN _IGNORE_NUMPAD _IGNORE_OTHERS _IGNORE_SYMBOL>;
     ignore-modifiers;
 };
 
@@ -97,16 +90,16 @@ Z_COMBO(combo_locknum0,     &kp KP_NLCK,    RH0 RT5,         _COMBO_MEDM, _PRIOR
 Z_COMBO(combo_lockcaps,     &kp CLCK,       RH0 RM5,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER)
 Z_COMBO(combo_lockscrl,     &kp SLCK,       RH0 RB5,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER)
 
-Z_COMBO(combo_layergame,    &tog GAME,      LH0 RH0,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
-Z_COMBO(combo_layerqwer,    &tog QWER,      LH2 RH2,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER)
-Z_COMBO(combo_layernmbr,    &num_word,      LH0 LH2,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL) // uses special module
-Z_COMBO(combo_layernavi,    &nav_word,      RH0 RH2,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL) // uses special module
-
 Z_COMBO(combo_bltthclr,     &bt BT_CLR,     RT0 RB0,         _COMBO_LONG, _PRIOR_IDLE, DVRK QWER)
 Z_COMBO(combo_bltth1,       &bt BT_SEL 0,   RT4 RB4,         _COMBO_LONG, _PRIOR_IDLE, DVRK QWER)
 Z_COMBO(combo_bltth2,       &bt BT_SEL 1,   RT3 RB3,         _COMBO_LONG, _PRIOR_IDLE, DVRK QWER)
 Z_COMBO(combo_bltth3,       &bt BT_SEL 2,   RT2 RB2,         _COMBO_LONG, _PRIOR_IDLE, DVRK QWER)
 Z_COMBO(combo_bltth4,       &bt BT_SEL 3,   RT1 RB1,         _COMBO_LONG, _PRIOR_IDLE, DVRK QWER)
+
+Z_COMBO(combo_layerqwer,    &tog QWER,      LH2 RH2,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER)
+Z_COMBO(combo_layergame,    &tog GAME,      LH0 RH0,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
+Z_COMBO(combo_layernmbr,    &num_word,      LH0 LH2,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL) // uses special module
+Z_COMBO(combo_layernavi,    &nav_word,      RH0 RH2,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL) // uses special module
 
 Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER) // uses y_macro_github.h
 
