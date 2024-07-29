@@ -23,7 +23,7 @@
 #define NMBR  4
 #define NAVI  5
 #undef  Z_ALL
-#define Z_ALL DVRK QWER GAME NMBR NAVI
+#define Z_ALL DVRK CMB0 QWER GAME NMBR NAVI
 
 /* timings */
 #define _TIME_ZERO   0
