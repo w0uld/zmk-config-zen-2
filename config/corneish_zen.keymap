@@ -84,8 +84,8 @@ Z_COMBO(combo_lctrl,        &sk LCTRL,      LM1 LM2,         _COMBO_SHRT, _PRIOR
 Z_COMBO(combo_rctrl,        &sk LCTRL,      RM1 RM2,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
 Z_COMBO(combo_lctrlshift,   &sk LS(LCTRL),  LM1 LM2 LM3,     _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
 Z_COMBO(combo_rctrlshift,   &sk LS(LCTRL),  RM1 RM2 RM3,     _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
-Z_COMBO(combo_lgui,         &sk LGUI,       LM4 LM5,         _COMBO_SHRT, _PRIOR_IDLE, Z_ALL)
-Z_COMBO(combo_rgui,         &sk LGUI,       RM4 RM5,         _COMBO_SHRT, _PRIOR_IDLE, Z_ALL)
+Z_COMBO(combo_lgui,         &sk LGUI,       LM0 LM1,         _COMBO_SHRT, _PRIOR_IDLE, Z_ALL)
+Z_COMBO(combo_rgui,         &sk LGUI,       RM0 RM1,         _COMBO_SHRT, _PRIOR_IDLE, Z_ALL)
 
 Z_COMBO(combo_copy,         &kp LC(INS),    LB4 LB3 LB2,     _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
 Z_COMBO(combo_paste,        &kp LS(INS),    LB3 LB2 LB1,     _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
