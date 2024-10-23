@@ -26,10 +26,11 @@
 #define Z_ALL DVRK CMB0 QWER GAME NMBR NAVI
 
 /* timings */
-#define _TIME_ZERO   0
 #define _QUIKTAP_MS  250
 #define _TAPTERM_MS  200
+#define _PRIOR_ZERO  0
 #define _PRIOR_IDLE  250
+#define _PRIOR_LONG  500
 #define _COMBO_SHRT  20
 #define _COMBO_MEDM  30
 #define _COMBO_LONG  50
@@ -75,17 +76,17 @@ ZMK_BEHAVIOR(nav_word, caps_word,
 
 /* combos, uses z_combo.h */
 // syntax: Z_COMBO(name, combo_bindings, keypos, combo_timeout, combo_prioridle, combo_layers)
-Z_COMBO(combo_esc,          &kp ESC,        LT5 LT4,         _COMBO_MEDM, _TIME_ZERO,  Z_ALL)
+Z_COMBO(combo_esc,          &kp ESC,        LT5 LT4,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
 Z_COMBO(combo_enter,        &kp RET,        RB3 RB2 RB1,     _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
 Z_COMBO(combo_backslash,    AS(BSLH),       LB5 LB4,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
 Z_COMBO(combo_grave,        AS(GRAVE),      LH2 LH1,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
 
-Z_COMBO(combo_lctrl,        &sk LCTRL,      LM1 LM2,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
-Z_COMBO(combo_rctrl,        &sk LCTRL,      RM1 RM2,         _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
+Z_COMBO(combo_lctrl,        &sk LCTRL,      LM1 LM2,         _COMBO_SHRT, _PRIOR_LONG, DVRK QWER)
+Z_COMBO(combo_rctrl,        &sk LCTRL,      RM1 RM2,         _COMBO_SHRT, _PRIOR_LONG, DVRK QWER)
 Z_COMBO(combo_lctrlshift,   &sk LS(LCTRL),  LM1 LM2 LM3,     _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
 Z_COMBO(combo_rctrlshift,   &sk LS(LCTRL),  RM1 RM2 RM3,     _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
-Z_COMBO(combo_lgui,         &sk LGUI,       LM0 LM1,         _COMBO_SHRT, _PRIOR_IDLE, Z_ALL)
-Z_COMBO(combo_rgui,         &sk LGUI,       RM0 RM1,         _COMBO_SHRT, _PRIOR_IDLE, Z_ALL)
+Z_COMBO(combo_lgui,         &sk LGUI,       LM1 LT2 LM3,     _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
+Z_COMBO(combo_rgui,         &sk LGUI,       RM1 RT2 RM3,     _COMBO_SHRT, _PRIOR_IDLE, DVRK QWER)
 
 Z_COMBO(combo_copy,         &kp LC(INS),    LB4 LB3 LB2,     _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
 Z_COMBO(combo_paste,        &kp LS(INS),    LB3 LB2 LB1,     _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
