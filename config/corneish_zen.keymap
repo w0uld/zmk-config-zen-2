@@ -60,21 +60,10 @@
 
 
 /* ref: https://github.com/urob/zmk-auto-layer */
-/*ZMK_BEHAVIOR(auto_lyr, auto_layer,
+ZMK_BEHAVIOR(auto_lyr, auto_layer,
     continue-list   = <_IGNORE_OTHERS _IGNORE_NAVGTN _IGNORE_NUMPAD _IGNORE_NUMBER _IGNORE_SYMBOL>;
     ignore-modifiers;
-)*/
-
-/ {
-  behaviors {
-    auto_lyr: auto_lyr {
-      compatible = "zmk,behavior-auto-layer";
-      #binding-cells = <1>;
-      continue-list   = <_IGNORE_OTHERS _IGNORE_NAVGTN _IGNORE_NUMPAD _IGNORE_NUMBER _IGNORE_SYMBOL>;
-      ignore-modifiers;
-    };
-  };
-};
+)
 
 
 /* combos, uses z_combo.h */
