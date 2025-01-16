@@ -59,16 +59,17 @@
 };
 
 
-/*
+
 /* smart_nav, requires urob's PR #1451 */
-ZMK_BEHAVIOR(nav_word, caps_word,
+/*ZMK_BEHAVIOR(nav_word, caps_word,
     layers          = <NAVI>;
     continue-list   = <_IGNORE_OTHERS _IGNORE_NAVGTN _IGNORE_NUMPAD>;
     ignore-modifiers;
 )
+*/
 
 /* smart_num, requires urob's PR #1451 */
-&num_word {
+/*&num_word {
     layers          = <NMBR>;
     continue-list   = <_IGNORE_NUMBER _IGNORE_NAVGTN _IGNORE_NUMPAD _IGNORE_OTHERS _IGNORE_SYMBOL>;
     ignore-modifiers;
