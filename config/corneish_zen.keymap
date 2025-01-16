@@ -58,6 +58,22 @@
     retro-tap;                          //enabling retro-tap
 };
 
+
+
+/* ref: https://github.com/urob/zmk-auto-layer */
+ZMK_BEHAVIOR(nav_word, auto_layer,
+    layers          = <NAVI>;
+    continue-list   = <_IGNORE_OTHERS _IGNORE_NAVGTN _IGNORE_NUMPAD>;
+    ignore-modifiers;
+)
+
+ZMK_BEHAVIOR(num_word, auto_layer,
+    layers          = <NMBR>;
+    continue-list   = <_IGNORE_OTHERS _IGNORE_NAVGTN _IGNORE_NUMPAD _IGNORE_NUMBER _IGNORE_SYMBOL>;
+    ignore-modifiers;
+)
+
+
 /* combos, uses z_combo.h */
 // syntax: Z_COMBO(name, combo_bindings, keypos, combo_timeout, combo_prioridle, combo_layers)
 Z_COMBO(combo_esc,          &kp ESC,        LT5 LT4,         _COMBO_MEDM, _PRIOR_ZERO, Z_ALL)
@@ -93,6 +109,8 @@ Z_COMBO(combo_bltth4,       &out OUT_TOG,   LT0 LB0,         _COMBO_LONG, _PRIOR
  
 Z_COMBO(combo_layerqwer,    &tog QWER,      LH2 RH2,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
 Z_COMBO(combo_layergame,    &tog GAME,      LH0 RH0,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
+Z_COMBO(combo_layernmbr,    &num_word,      LH0 LH2,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL) // ref: https://github.com/urob/zmk-auto-layer
+Z_COMBO(combo_layernavi,    &nav_word,      RH0 RH2,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL) // ref: https://github.com/urob/zmk-auto-layer
 
 Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER) // uses y_macro_github.h
 
