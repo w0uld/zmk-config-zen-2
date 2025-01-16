@@ -60,10 +60,10 @@
 
 
 /* ref: https://github.com/urob/zmk-auto-layer */
-ZMK_BEHAVIOR(auto_lyr, auto_layer,
+/*ZMK_BEHAVIOR(auto_lyr, auto_layer,
     continue-list   = <_IGNORE_OTHERS _IGNORE_NAVGTN _IGNORE_NUMPAD _IGNORE_NUMBER _IGNORE_SYMBOL>;
     ignore-modifiers;
-)
+)*/
 
 
 /* combos, uses z_combo.h */
@@ -101,8 +101,8 @@ Z_COMBO(combo_bltth4,       &out OUT_TOG,   LT0 LB0,         _COMBO_LONG, _PRIOR
  
 Z_COMBO(combo_layerqwer,    &tog QWER,      LH2 RH2,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
 Z_COMBO(combo_layergame,    &tog GAME,      LH0 RH0,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
-Z_COMBO(combo_layernmbr,    &auto_lyr NMBR, LH0 LH2,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL) // ref: https://github.com/urob/zmk-auto-layer
-Z_COMBO(combo_layernavi,    &auto_lyr NAVI, RH0 RH2,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL) // ref: https://github.com/urob/zmk-auto-layer
+//Z_COMBO(combo_layernmbr,    &auto_lyr NMBR, LH0 LH2,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL) // ref: https://github.com/urob/zmk-auto-layer
+//Z_COMBO(combo_layernavi,    &auto_lyr NAVI, RH0 RH2,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL) // ref: https://github.com/urob/zmk-auto-layer
 
 Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER) // uses y_macro_github.h
 
