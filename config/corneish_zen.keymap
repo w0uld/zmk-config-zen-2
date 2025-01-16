@@ -92,12 +92,15 @@ Z_COMBO(combo_locknum0,     &kp KP_NLCK,    RH0 RT5,         _COMBO_LONG, _PRIOR
 Z_COMBO(combo_lockcaps,     &kp CLCK,       RH0 RM5,         _COMBO_LONG, _PRIOR_IDLE, Z_ALL)
 Z_COMBO(combo_lockscrl,     &kp SLCK,       RH0 RB5,         _COMBO_LONG, _PRIOR_IDLE, Z_ALL)
 
-Z_COMBO(combo_bltthclr,     &bt BT_CLR,     RT0 RB0,         _COMBO_LONG, _PRIOR_IDLE, Z_ALL)
-Z_COMBO(combo_bltth1,       &bt BT_SEL 0,   RT4 RB4,         _COMBO_LONG, _PRIOR_IDLE, Z_ALL)
-Z_COMBO(combo_bltth2,       &bt BT_SEL 1,   RT3 RB3,         _COMBO_LONG, _PRIOR_IDLE, Z_ALL)
-Z_COMBO(combo_bltth3,       &bt BT_SEL 2,   RT2 RB2,         _COMBO_LONG, _PRIOR_IDLE, Z_ALL)
-Z_COMBO(combo_bltth4,       &bt BT_SEL 3,   RT1 RB1,         _COMBO_LONG, _PRIOR_IDLE, Z_ALL)
-Z_COMBO(combo_output,       &out OUT_TOG,   LT0 LB0,         _COMBO_LONG, _PRIOR_IDLE, Z_ALL) // uses outputs.h
+Z_COMBO(combo_ble_clr,      &bt BT_CLR,     RT0 RB0,         _COMBO_LONG, _PRIOR_IDLE, Z_ALL)
+Z_COMBO(combo_ble_1,        &bt BT_SEL 0,   RT4 RB4,         _COMBO_LONG, _PRIOR_IDLE, Z_ALL)
+Z_COMBO(combo_ble_2,        &bt BT_SEL 1,   RT3 RB3,         _COMBO_LONG, _PRIOR_IDLE, Z_ALL)
+Z_COMBO(combo_ble_3,        &bt BT_SEL 2,   RT2 RB2,         _COMBO_LONG, _PRIOR_IDLE, Z_ALL)
+Z_COMBO(combo_ble_4,        &bt BT_SEL 3,   RT1 RB1,         _COMBO_LONG, _PRIOR_IDLE, Z_ALL)
+
+Z_COMBO(combo_out_tog,      &out OUT_TOG,   LT0 LB0,         _COMBO_LONG, _PRIOR_IDLE, Z_ALL) // uses outputs.h
+Z_COMBO(combo_out_usb,      &out OUT_USB,   LT0 LB0,         _COMBO_LONG, _PRIOR_IDLE, Z_ALL) // uses outputs.h
+Z_COMBO(combo_out_blt,      &out OUT_BLE,   LT0 LB0,         _COMBO_LONG, _PRIOR_IDLE, Z_ALL) // uses outputs.h
  
 Z_COMBO(combo_layerqwer,    &tog QWER,      LH2 RH2,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
 Z_COMBO(combo_layergame,    &tog GAME,      LH0 RH0,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
