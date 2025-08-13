@@ -115,13 +115,13 @@ Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_MEDM, _PRIOR
                 TRNS_layer {
                         bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-        &trans          &trans          &trans          &trans          &trans          &trans              &trans          &trans          &trans          &trans          &trans          &trans
+     &trans          &trans          &trans          &trans          &trans          &trans              &trans          &trans          &trans          &trans          &trans          &trans
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-        &trans          &trans          &trans          &trans          &trans          &trans              &trans          &trans          &trans          &trans          &trans          &trans
+     &trans          &trans          &trans          &trans          &trans          &trans              &trans          &trans          &trans          &trans          &trans          &trans
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-        &trans          &trans          &trans          &trans          &trans          &trans              &trans          &trans          &trans          &trans          &trans          &trans
+     &trans          &trans          &trans          &trans          &trans          &trans              &trans          &trans          &trans          &trans          &trans          &trans
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                                        &trans          &trans          &trans              &trans          &trans          &trans
+                                                     &trans          &trans          &trans              &trans          &trans          &trans
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
                         >;
                 };
@@ -134,13 +134,13 @@ Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_MEDM, _PRIOR
                 DVRK_layer {
                         bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-      &lt NAVI TAB      &kp APOS        &kp COMMA       &kp DOT         &kp P           &kp Y               &kp F           &kp G           &kp C           &kp R           &kp L           &kp FSLH
+     &lt NAVI TAB    &kp APOS        &kp COMMA       &kp DOT         &kp P           &kp Y               &kp F           &kp G           &kp C           &kp R           &kp L           &kp FSLH
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-        &kp LCTRL       &kp A           &kp O           &kp E           &kp U           &kp I               &kp D           &kp H           &kp T           &kp N           &kp S           &kp MINUS
+     &kp LCTRL       &kp A           &kp O           &kp E           &kp U           &kp I               &kp D           &kp H           &kp T           &kp N           &kp S           &kp MINUS
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-        &kp LSHFT       &kp SEMI        &kp Q           &kp J           &kp K           &kp X               &kp B           &kp M           &kp W           &kp V           &kp Z       &mt LSHFT EQUAL
+     &kp LSHFT       &kp SEMI        &kp Q           &kp J           &kp K           &kp X               &kp B           &kp M           &kp W           &kp V           &kp Z           &mt LSHFT EQUAL
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                                        &kp LALT        &kp SPACE       &sl NMBR         &lt NAVI BSPC      &kp RALT        &kp F24
+                                                     &kp LALT        &kp SPACE       &sl NMBR            &lt NAVI BSPC   &kp RALT        &kp F24
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
                         >;
                 };
@@ -148,13 +148,13 @@ Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_MEDM, _PRIOR
                 QWER_layer {
                         bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-        &trans          &kp Q           &kp W           &kp E           &kp R           &kp T               &kp Y           &kp U           &kp I           &kp O           &kp P           &kp LBKT
+     &trans          &kp Q           &kp W           &kp E           &kp R           &kp T               &kp Y           &kp U           &kp I           &kp O           &kp P           &kp LBKT
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-        &trans          &kp A           &kp S           &kp D           &kp F           &kp G               &kp H           &kp J           &kp K           &kp L           &kp SEMI        &kp APOS
+     &trans          &kp A           &kp S           &kp D           &kp F           &kp G               &kp H           &kp J           &kp K           &kp L           &kp SEMI        &kp APOS
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-        &trans          &kp Z           &kp X           &kp C           &kp V           &kp B               &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH    &mt LSHFT RBKT
+     &trans          &kp Z           &kp X           &kp C           &kp V           &kp B               &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &mt LSHFT RBKT
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                                        &trans          &trans          &trans              &trans          &trans          &trans
+                                                     &trans          &trans          &trans              &trans          &trans          &trans
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
                         >;
                 };
@@ -162,13 +162,13 @@ Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_MEDM, _PRIOR
                 GAME_layer {
                         bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-        &trans          &kp T           &kp Q           &kp W           &kp E           &kp R               &kp Y           &kp PG_UP       &kp UP          &kp PG_DN       &kp P           &trans
+     &trans          &kp T           &kp Q           &kp W           &kp E           &kp R               &kp Y           &kp PG_UP       &kp UP          &kp PG_DN       &kp P           &trans
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-      &mt LCTRL I       &kp LCTRL       &kp A           &kp S           &kp D           &kp F               &kp H           &kp LEFT        &kp DOWN        &kp RIGHT       &kp SEMI        &trans
+     &mt LCTRL I     &kp LCTRL       &kp A           &kp S           &kp D           &kp F               &kp H           &kp LEFT        &kp DOWN        &kp RIGHT       &kp SEMI        &trans
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-      &mt LSHFT G       &kp LSHFT       &kp Z           &kp X           &kp C           &kp V               &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &kp LSHFT
+     &mt LSHFT G     &kp LSHFT       &kp Z           &kp X           &kp C           &kp V               &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &kp LSHFT
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                                        &trans          &trans          &trans              &trans          &tog GAME       &kp RET
+                                                     &trans          &trans          &trans              &trans          &tog GAME       &kp RET
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
                         >;
                 };
@@ -176,13 +176,13 @@ Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_MEDM, _PRIOR
                 NMBR_layer {
                         bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-        &trans          AS(N1)          AS(N2)          AS(N3)          AS(N4)          AS(N5)              AS(LPAR)        AS(N7)          AS(N8)          AS(N9)          AS(RPAR)        AS(FSLH)
+     &trans          AS(N1)          AS(N2)          AS(N3)          AS(N4)          AS(N5)              AS(LPAR)        AS(N7)          AS(N8)          AS(N9)          AS(RPAR)        AS(FSLH)
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-        &trans          &kp LGUI        &kp LALT        &kp LCTRL       &kp LSHFT       &kp F13             AS(LBKT)        AS(N4)          AS(N5)          AS(N6)          AS(RBKT)        AS(MINUS)
+     &trans          &kp LGUI        &kp LALT        &kp LCTRL       &kp LSHFT       &kp F13             AS(LBKT)        AS(N4)          AS(N5)          AS(N6)          AS(RBKT)        AS(MINUS)
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-        &trans          AS(SEMI)        AS(APOS)        AS(COMMA)       AS(DOT)         &kp KP_DOT          AS(GRAVE)       AS(N1)          AS(N2)          AS(N3)          AS(BSLH)        AS(EQUAL)
+     &trans          AS(SEMI)        AS(APOS)        AS(COMMA)       AS(DOT)         &kp KP_DOT          AS(GRAVE)       AS(N1)          AS(N2)          AS(N3)          AS(BSLH)        AS(EQUAL)
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                                        &trans          &trans          &trans              &trans          AS(N0)          &kp KP_DOT
+                                                     &trans          &trans          &trans              &trans          AS(N0)          &kp KP_DOT
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
                         >;
                 };
@@ -190,13 +190,13 @@ Z_COMBO(combo_github,       &macro_github,  LT5 RT5,         _COMBO_MEDM, _PRIOR
                 NAVI_layer {
                         bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-        &trans          &kp F1          &kp F2          &kp F3          &kp F4          &kp F5          &kp PAUSE_BREAK     &kp PG_UP       &kp UP          &kp PG_DN       &kp HOME        &trans
+     &trans          &kp F1          &kp F2          &kp F3          &kp F4          &kp F5              &kp PAUSE_BREAK &kp PG_UP       &kp UP          &kp PG_DN       &kp HOME        &trans
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-        &trans        &mt LGUI F5     &mt LALT F6     &mt LCTRL F7    &mt LSHFT F8      &kp F14             &kp PSCRN       &kp LEFT        &kp DOWN        &kp RIGHT       &kp END         &trans
+     &trans          &mt LGUI F5     &mt LALT F6     &mt LCTRL F7    &mt LSHFT F8    &kp F14             &kp PSCRN       &kp LEFT        &kp DOWN        &kp RIGHT       &kp END         &trans
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-        &trans          &kp F9          &kp F10         &kp F11         &kp F12         &kp F15             &kp INS       &kp C_VOL_DN      &kp C_MUTE    &kp C_VOL_UP      &kp C_PP        &kp LSHFT
+     &trans          &kp F9          &kp F10         &kp F11         &kp F12         &kp F15             &kp INS         &kp C_VOL_DN    &kp C_MUTE      &kp C_VOL_UP    &kp C_PP        &kp LSHFT
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                                        &trans          &trans          &trans              &trans          &kp DEL         &kp RET
+                                                     &trans          &trans          &trans              &trans          &kp DEL         &kp RET
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
                         >;
                 };
