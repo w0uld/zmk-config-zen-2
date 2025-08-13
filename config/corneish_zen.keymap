@@ -108,7 +108,7 @@ Z_COMBO(combo_layernmbr,    &auto_lyr NMBR, LH0 LH2,         _COMBO_MEDM, _PRIOR
 Z_COMBO(combo_layernavi,    &auto_lyr NAVI, RH0 RH2,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL) // ref: https://github.com/urob/zmk-auto-layer
 
 Z_COMBO(combo_github,       &macro_github,  LB5 RB5,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER) // uses y_macro_github.h
-// Z_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER)
+Z_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER)
 
 
 
