@@ -1,16 +1,3 @@
-# manifest:
-#  remotes:
-#    - name: zmkfirmware
-#      url-base: https://github.com/zmkfirmware
-#  projects:
-#    - name: zmk
-#      remote: zmkfirmware
-#      revision: main
-#      import: app/west.yml
-#  self:
-#    path: config
-
-
 manifest:
   remotes:
     - name: zmkfirmware
@@ -22,7 +9,7 @@ manifest:
       remote: zmkfirmware
       revision: v0.2 # set to desired version 
       import: app/west.yml
-    - name: zmk-auto-layer
+    - name: zmk-auto-layer # used for auto_layer functionalities in keymap
       remote: urob
       revision: v0.2 # set to same version as zmk
   self:
