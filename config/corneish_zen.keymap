@@ -46,7 +46,7 @@
 
 /* mouse settings */
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 30    // default: 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 48    // default: 10
 
 /* adjustments */
 &mt {
@@ -197,9 +197,9 @@ Z_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         _COMBO_MEDM, _PRIOR
                 NAVI_layer {
                         bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-     &trans          &kp F1          &kp F2          &kp F3          &kp F4          &kp F5              &kp PAUSE_BREAK &kp PG_UP       &kp UP          &kp PG_DN       &kp HOME        &msc MOVE_Y(5)
+     &trans          &kp F1          &kp F2          &kp F3          &kp F4          &kp F5              &kp PAUSE_BREAK &kp PG_UP       &kp UP          &kp PG_DN       &kp HOME        &msc SCRL_UP
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-     &trans          &mt LGUI F5     &mt LALT F6     &mt LCTRL F7    &mt LSHFT F8    &kp F14             &kp PSCRN       &kp LEFT        &kp DOWN        &kp RIGHT       &kp END         &msc MOVE_Y(-5)
+     &trans          &mt LGUI F5     &mt LALT F6     &mt LCTRL F7    &mt LSHFT F8    &kp F14             &kp PSCRN       &kp LEFT        &kp DOWN        &kp RIGHT       &kp END         &msc SCRL_DOWN
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
      &trans          &kp F9          &kp F10         &kp F11         &kp F12         &kp F15             &kp INS         &kp C_VOL_DN    &kp C_MUTE      &kp C_VOL_UP    &kp C_PP        &kp LSHFT
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
@@ -211,11 +211,11 @@ Z_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         _COMBO_MEDM, _PRIOR
                 MOUS_layer {
                         bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-     &trans          &kp F13         &kp F14         &kp F15         &kp F16         &msc MOVE_Y(5)      &msc MOVE_Y(5)  &msc MOVE_Y(5)    &mmv MOVE_UP  &msc MOVE_Y(-5)  &kp HOME        &msc MOVE_Y(5)
+     &trans          &kp F13         &kp F14         &kp F15         &kp F16         &msc SCRL_UP        &msc SCRL_UP    &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN  &kp HOME        &msc SCRL_UP
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-     &trans          &mkp MB4        &mkp MB3        &mkp MB2        &mkp MB1        &msc MOVE_Y(-5)     &msc MOVE_Y(-5)  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp END         &msc MOVE_Y(-5)
+     &trans          &mkp MB4        &mkp MB3        &mkp MB2        &mkp MB1        &msc SCRL_DOWN      &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp END         &msc SCRL_DOWN
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-     &trans          &mkp MB5        &kp F21         &kp F22         &kp F23         &kp F24             &kp F18         &msc MOVE_X(-5) &kp F19         &msc MOVE_X(5)  &kp F20         &kp LSHFT
+     &trans          &mkp MB5        &kp F21         &kp F22         &kp F23         &kp F24             &kp F18         &msc SCRL_LEFT  &kp F19         &msc SCRL_RIGHT &kp F20         &kp LSHFT
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
                                                      &trans          &trans          &trans              &trans          &kp DEL         &tog MOUS
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
