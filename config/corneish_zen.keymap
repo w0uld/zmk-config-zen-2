@@ -139,7 +139,7 @@ Z_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         _COMBO_MEDM, _PRIOR
             compatible = "zmk,keymap";
 
                 DVRK_layer {
-                    display-name = dvrk;
+                    display-name = "dvrk";
                     bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
      &lt NAVI TAB    &kp APOS        &kp COMMA       &kp DOT         &kp P           &kp Y               &kp F           &kp G           &kp C           &kp R           &kp L           &kp FSLH
@@ -154,7 +154,7 @@ Z_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         _COMBO_MEDM, _PRIOR
                 };
 
                 QWER_layer {
-                    display-name = qwer;
+                    display-name = "qwer";
                     bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
      &trans          &kp Q           &kp W           &kp E           &kp R           &kp T               &kp Y           &kp U           &kp I           &kp O           &kp P           &kp LBKT
@@ -169,7 +169,7 @@ Z_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         _COMBO_MEDM, _PRIOR
                 };
 
                 GAME_layer {
-                    display-name = game;
+                    display-name = "game";
                     bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
      &trans          &kp T           &kp Q           &kp W           &kp E           &kp R               &kp Y           &kp PG_UP       &kp UP          &kp PG_DN       &kp P           &trans
@@ -184,7 +184,7 @@ Z_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         _COMBO_MEDM, _PRIOR
                 };
 
                 MOUS_layer {
-                    display-name = mouse;
+                    display-name = "mouse";
                     bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
      &trans          &kp F13         &kp F14         &kp F15         &kp F16         &kp F17             &kp INS         &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN  &kp HOME        &kp F18
@@ -199,7 +199,7 @@ Z_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         _COMBO_MEDM, _PRIOR
                 };
 
                 NMBR_layer {
-                    display-name = nmbr;
+                    display-name = "nmbr";
                     bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
      &trans          AS(N1)          AS(N2)          AS(N3)          AS(N4)          AS(N5)              AS(LPAR)        AS(N7)          AS(N8)          AS(N9)          AS(RPAR)        AS(FSLH)
@@ -214,7 +214,7 @@ Z_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         _COMBO_MEDM, _PRIOR
                 };
 
                 NAVI_layer {
-                    display-name = navi;
+                    display-name = "navi";
                     bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
      &trans          &kp F1          &kp F2          &kp F3          &kp F4          &kp F5              &kp INS         &kp PG_UP       &kp UP          &kp PG_DN       &kp HOME        &kp PAUSE_BREAK
