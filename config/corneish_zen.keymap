@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>        // to enable OUT_USB, OUT_BLE, OUT_TOG
+#include <dt-bindings/zmk/pointing.h>       // to enable mouse
 
 /* userspace modules */
 #include "resources/keypos_42keys.h"        // human readable bindings
@@ -22,8 +23,9 @@
 #define GAME  2
 #define NMBR  3
 #define NAVI  4
+#define MOUS  5
 #undef  Z_ALL
-#define Z_ALL DVRK QWER GAME NMBR NAVI
+#define Z_ALL DVRK QWER GAME NMBR NAVI MOUS
 
 /* timings */
 #define _QUIKTAP_MS  250
@@ -142,7 +144,7 @@ Z_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         _COMBO_MEDM, _PRIOR
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
      &kp LSHFT       &kp SEMI        &kp Q           &kp J           &kp K           &kp X               &kp B           &kp M           &kp W           &kp V           &kp Z           &mt LSHFT EQUAL
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                                     &kp LALT        &kp SPACE       &sl NMBR            &lt NAVI BSPC   &kp RALT        &kp F24
+                                                     &kp LALT        &kp SPACE       &sl NMBR            &lt NAVI BSPC   &kp RALT        &tog MOUS
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
                         >;
                 };
@@ -192,13 +194,27 @@ Z_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         _COMBO_MEDM, _PRIOR
                 NAVI_layer {
                         bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-     &trans          &kp F1          &kp F2          &kp F3          &kp F4          &kp F5              &kp PAUSE_BREAK &kp PG_UP       &kp UP          &kp PG_DN       &kp HOME        &trans
+     &trans          &kp F1          &kp F2          &kp F3          &kp F4          &kp F5              &msc SCRL_UP    &kp PG_UP       &kp UP          &kp PG_DN       &kp HOME        &kp PAUSE_BREAK
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-     &trans          &mt LGUI F5     &mt LALT F6     &mt LCTRL F7    &mt LSHFT F8    &kp F14             &kp PSCRN       &kp LEFT        &kp DOWN        &kp RIGHT       &kp END         &trans
+     &trans          &mt LGUI F5     &mt LALT F6     &mt LCTRL F7    &mt LSHFT F8    &kp F14             &msc SCRL_DOWN  &kp LEFT        &kp DOWN        &kp RIGHT       &kp END         &kp PSCRN
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
      &trans          &kp F9          &kp F10         &kp F11         &kp F12         &kp F15             &kp INS         &kp C_VOL_DN    &kp C_MUTE      &kp C_VOL_UP    &kp C_PP        &kp LSHFT
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
                                                      &trans          &trans          &trans              &trans          &kp DEL         &kp RET
+//                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
+                        >;
+                };
+
+                MOUS_layer {
+                        bindings = <
+// ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
+     &trans          &kp F13         &kp F14         &kp F15         &kp F16         &msc SCRL_UP        &msc SCRL_UP    &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN  &kp HOME        &msc SCRL_LEFT
+// ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
+     &trans          &mkp MB4        &mkp MB3        &mkp MB2        &mkp MB1        &msc SCRL_DOWN      &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp END         &msc SCRL_RIGHT
+// ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
+     &trans          &mkp MB5        &kp F23         &msc SCRL_LEFT  &msc SCRL_RIGHT &kp F24             &kp INS         &kp C_VOL_DN    &kp C_MUTE      &kp C_VOL_UP    &kp C_PP        &kp LSHFT
+// ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
+                                                     &trans          &trans          &trans              &trans          &kp DEL         &tog MOUS
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
                         >;
                 };
