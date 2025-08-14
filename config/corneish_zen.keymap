@@ -46,7 +46,7 @@
 
 /* mouse settings */
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 120   // default: 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 180   // default: 10
 
 /* adjustments */
 &mt {
