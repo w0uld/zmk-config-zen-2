@@ -4,8 +4,6 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
-    - name: caksoylar
-      url-base: https://github.com/caksoylar
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -14,9 +12,5 @@ manifest:
     - name: zmk-auto-layer # used for auto_layer functionalities in keymap
       remote: urob
       revision: v0.3 # set to same version as zmk
-    - name: zmk
-      remote: caksoylar # https://gist.github.com/caksoylar/c411313990978e1903c244f03039187a
-      revision: caksoylar/zen-v1+v2  # custom branch name
-      import: app/west.yml
   self:
     path: config
