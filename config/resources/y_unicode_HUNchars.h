@@ -10,6 +10,3 @@ ZMK_UNICODE_PAIR(hu_o_di,       N0, N0,  F, N6,         N0, N0,  D, N6) // ö/Ö
 ZMK_UNICODE_PAIR(hu_o_da,       N0, N1, N5, N1,         N0, N1, N5, N0) // ő/Ő
 ZMK_UNICODE_PAIR(hu_u_di,       N0, N0,  F,  C,         N0, N0,  D,  C) // ü/Ü
 ZMK_UNICODE_PAIR(hu_u_da,       N0, N1, N7, N1,         N0, N1, N7, N0) // ű/Ű
-
-
-

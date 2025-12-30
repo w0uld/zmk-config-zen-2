@@ -15,17 +15,16 @@
 #include "resources/z_behavior.h"           // behavior preprocessor
 #include "resources/z_combo.h"              // Z_COMBO
 #include "resources/z_autoshift_legacy.h"   // autoshift
-#include "resources/y_macro_github.h"       // macro_github
 
 /* layer aliases */
 #define QWER  0
-#define DVRK  1
+#define CLMK  1
 #define GAME  2
 #define MOUS  3
 #define NMBR  4
 #define NAVI  5
 #undef  Z_ALL
-#define Z_ALL DVRK QWER GAME NMBR NAVI MOUS
+#define Z_ALL CLMK QWER GAME NMBR NAVI MOUS
 
 /* timings */
 #define _QUIKTAP_MS  250
@@ -79,16 +78,16 @@ Z_COMBO(combo_enter,        &kp RET,        RB3 RB2 RB1,     _COMBO_LONG, _PRIOR
 Z_COMBO(combo_backslash,    AS(BSLH),       LB5 LB4,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
 Z_COMBO(combo_grave,        AS(GRAVE),      LH2 LH1,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
 
-Z_COMBO(combo_lctrl,        &sk LCTRL,      LM1 LM2 LM3,     _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER)
-Z_COMBO(combo_rctrl,        &sk LCTRL,      RM1 RM2 RM3,     _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER)
-Z_COMBO(combo_lgui,         &sk LGUI,       LM1 LT2 LM3,     _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER)
-Z_COMBO(combo_rgui,         &sk LGUI,       RM1 RT2 RM3,     _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER)
-Z_COMBO(combo_lctrlshft,    &sk LS(LCTRL),  LM1 LM2 LM3 LM4, _COMBO_LONG, _PRIOR_IDLE, DVRK QWER)
-Z_COMBO(combo_rctrlshft,    &sk LS(LCTRL),  RM1 RM2 RM3 RM4, _COMBO_LONG, _PRIOR_IDLE, DVRK QWER)
-Z_COMBO(combo_lguishft,     &sk LS(LGUI),   LM1 LT2 LM3 LM4, _COMBO_LONG, _PRIOR_IDLE, DVRK QWER)
-Z_COMBO(combo_rguishft,     &sk LS(LGUI),   RM1 RT2 RM3 RM4, _COMBO_LONG, _PRIOR_IDLE, DVRK QWER)
-Z_COMBO(combo_lctrlgui,     &sk LG(LCTRL),  LM1 LM2 LM3 LT2, _COMBO_LONG, _PRIOR_IDLE, DVRK QWER)
-Z_COMBO(combo_rctrlgui,     &sk LG(LCTRL),  RM1 RM2 RM3 RT2, _COMBO_LONG, _PRIOR_IDLE, DVRK QWER)
+Z_COMBO(combo_lctrl,        &sk LCTRL,      LM1 LM2 LM3,     _COMBO_MEDM, _PRIOR_IDLE, CLMK QWER)
+Z_COMBO(combo_rctrl,        &sk LCTRL,      RM1 RM2 RM3,     _COMBO_MEDM, _PRIOR_IDLE, CLMK QWER)
+Z_COMBO(combo_lgui,         &sk LGUI,       LM1 LT2 LM3,     _COMBO_MEDM, _PRIOR_IDLE, CLMK QWER)
+Z_COMBO(combo_rgui,         &sk LGUI,       RM1 RT2 RM3,     _COMBO_MEDM, _PRIOR_IDLE, CLMK QWER)
+Z_COMBO(combo_lctrlshft,    &sk LS(LCTRL),  LM1 LM2 LM3 LM4, _COMBO_LONG, _PRIOR_IDLE, CLMK QWER)
+Z_COMBO(combo_rctrlshft,    &sk LS(LCTRL),  RM1 RM2 RM3 RM4, _COMBO_LONG, _PRIOR_IDLE, CLMK QWER)
+Z_COMBO(combo_lguishft,     &sk LS(LGUI),   LM1 LT2 LM3 LM4, _COMBO_LONG, _PRIOR_IDLE, CLMK QWER)
+Z_COMBO(combo_rguishft,     &sk LS(LGUI),   RM1 RT2 RM3 RM4, _COMBO_LONG, _PRIOR_IDLE, CLMK QWER)
+Z_COMBO(combo_lctrlgui,     &sk LG(LCTRL),  LM1 LM2 LM3 LT2, _COMBO_LONG, _PRIOR_IDLE, CLMK QWER)
+Z_COMBO(combo_rctrlgui,     &sk LG(LCTRL),  RM1 RM2 RM3 RT2, _COMBO_LONG, _PRIOR_IDLE, CLMK QWER)
 
 Z_COMBO(combo_copy,         &kp LC(INS),    LB4 LB3 LB2,     _COMBO_LONG, _PRIOR_IDLE, Z_ALL)
 Z_COMBO(combo_paste,        &kp LS(INS),    LB3 LB2 LB1,     _COMBO_LONG, _PRIOR_IDLE, Z_ALL)
@@ -107,15 +106,14 @@ Z_COMBO(combo_out_tog,      &out OUT_TOG,   LT0 LB0,         _COMBO_LONG, _PRIOR
 Z_COMBO(combo_out_usb,      &out OUT_USB,   LT5 LB5,         _COMBO_LONG, _PRIOR_IDLE, Z_ALL) // uses outputs.h
 Z_COMBO(combo_out_blt,      &out OUT_BLE,   LT4 LB4,         _COMBO_LONG, _PRIOR_IDLE, Z_ALL) // uses outputs.h
  
-Z_COMBO(combo_layerqwer,    &tog DVRK,      LH2 RH2,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
+Z_COMBO(combo_layerqwer,    &tog CLMK,      LH2 RH2,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
 Z_COMBO(combo_layergame,    &tog GAME,      LH0 RH0,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
 Z_COMBO(combo_layermous,    &tog MOUS,      RH1 RH2,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
 
 Z_COMBO(combo_layernmbr,    &auto_lyr NMBR, LH0 LH2,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL) // ref: https://github.com/urob/zmk-auto-layer
 Z_COMBO(combo_layernavi,    &auto_lyr NAVI, RH0 RH2,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL) // ref: https://github.com/urob/zmk-auto-layer
 
-Z_COMBO(combo_github,       &macro_github,  LB5 RB5,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER) // uses y_macro_github.h
-Z_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         _COMBO_MEDM, _PRIOR_IDLE, DVRK QWER)
+Z_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         _COMBO_MEDM, _PRIOR_IDLE, CLMK QWER)
 
 
 
@@ -154,15 +152,15 @@ Z_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         _COMBO_MEDM, _PRIOR
                         >;
                 };
 
-                DVRK_layer {
-                    display-name = "dvrk";
+                CLMK_layer {
+                    display-name = "clmk";
                     bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-     &trans          &kp APOS        &kp COMMA       &kp DOT         &kp P           &kp Y               &kp F           &kp G           &kp C           &kp R           &kp L           &kp MINUS
+     &lt NAVI TAB    &kp Q           &kp W           &kp F           &kp P           &kp G               &kp J           &kp L           &kp U           &kp Y           &kp SEMI        &kp MINUS
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-     &trans          &kp A           &kp O           &kp E           &kp U           &kp I               &kp D           &kp H           &kp T           &kp N           &kp S           &kp FSLH
+     &kp LCTRL       &kp A           &kp R           &kp S           &kp T           &kp D               &kp H           &kp N           &kp E           &kp I           &kp O           &kp APOS
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-     &trans          &kp SEMI        &kp Q           &kp J           &kp K           &kp X               &kp B           &kp M           &kp W           &kp V           &kp Z           &mt LSHFT EQUAL
+     &kp LSHFT       &kp Z           &kp X           &kp C           &kp V           &kp B               &kp K           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &mt LSHFT EQUAL
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
                                                      &trans          &trans          &trans              &trans          &trans          &trans
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
