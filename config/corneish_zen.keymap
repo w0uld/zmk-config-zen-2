@@ -14,7 +14,7 @@
 #include "resources/keypos_42keys.h"        // human readable bindings
 #include "resources/z_behavior.h"           // behavior preprocessor
 #include "resources/z_combo.h"              // Z_COMBO
-#include "resources/z_autoshift_legacy.h"   // autoshift
+#include "resources/z_autoshift_macro.h"   // autoshift
 
 /* layer aliases */
 #define QWER  0
@@ -75,11 +75,8 @@ ZMK_BEHAVIOR(auto_lyr, auto_layer,
 Z_COMBO(combo_esc,          &kp ESC,        LT5 LT4,         _COMBO_MEDM, _PRIOR_ZERO, Z_ALL)
 Z_COMBO(combo_enter,        &kp RET,        RB3 RB2 RB1,     _COMBO_LONG, _PRIOR_ZERO, Z_ALL)
 
-// Z_COMBO(combo_backslash,    AS(BSLH),       LB5 LB4,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
-// Z_COMBO(combo_grave,        AS(GRAVE),      LH2 LH1,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
-
-Z_COMBO(combo_backslash,    &as BSLH,       LB5 LB4,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
-Z_COMBO(combo_grave,        &as GRAVE,      LH2 LH1,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
+Z_COMBO(combo_backslash,    AS(BSLH),       LB5 LB4,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
+Z_COMBO(combo_grave,        AS(GRAVE),      LH2 LH1,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
 
 Z_COMBO(combo_lctrl,        &sk LCTRL,      LM1 LM2 LM3,     _COMBO_MEDM, _PRIOR_LONG, CLMK QWER)
 Z_COMBO(combo_rctrl,        &sk LCTRL,      RM1 RM2 RM3,     _COMBO_MEDM, _PRIOR_LONG, CLMK QWER)
@@ -200,9 +197,9 @@ Z_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         _COMBO_MEDM, _PRIOR
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
                         >;
                 };
-/*
+
                 NMBR_layer {
-                    display-name = "nmbrLEGACY";
+                    display-name = "nmbr";
                     bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
      &trans          AS(N1)          AS(N2)          AS(N3)          AS(N4)          AS(N5)              AS(LPAR)        AS(N7)          AS(N8)          AS(N9)          AS(RPAR)        AS(MINUS)
@@ -212,21 +209,6 @@ Z_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         _COMBO_MEDM, _PRIOR
      &trans          AS(SEMI)        AS(APOS)        AS(COMMA)       AS(DOT)         &kp KP_DOT          AS(GRAVE)       AS(N1)          AS(N2)          AS(N3)          AS(FSLH)        AS(EQUAL)
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
                                                      &trans          &trans          &trans              &trans          AS(N0)          &kp KP_DOT
-//                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
-                        >;
-                };
-*/
-                NMBR_layer {
-                    display-name = "nmbrMACRO";
-                    bindings = <
-// ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-     &trans          &as N1          &as N2          &as N3          &as N4          &as N5              &as LPAR        &as N7          &as N8          &as N9          &as RPAR        &as MINUS
-// ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-     &trans          &kp LGUI        &kp LALT        &kp LCTRL       &kp LSHFT       &kp F13             &as LBKT        &as N4          &as N5          &as N6          &as RBKT        &as BSLH
-// ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-     &trans          &as SEMI        &as APOS        &as COMMA       &as DOT         &kp KP_DOT          &as GRAVE       &as N1          &as N2          &as N3          &as FSLH        &as EQUAL
-// ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                                     &trans          &trans          &trans              &trans          &as N0          &kp KP_DOT
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
                         >;
                 };
