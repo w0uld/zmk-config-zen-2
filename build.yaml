@@ -3,9 +3,8 @@
 include:
   - board: corneish_zen_v2_left
     snippet: studio-rpc-usb-uart
-  # snippet: zmk-usb-logging       # uncomment to enable zmk-usb-logging
-  # snippet: nrf52840-nosd         # uncomment to reset softdevice on board. !WARNING! - it can brick board!
+    snippet: nrf52840-nosd         # uncomment to reset softdevice on board. !WARNING! - it can brick board!
     cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: corneish_zen_v2_left_with_studio
   - board: corneish_zen_v2_right
-
+    snippet: nrf52840-nosd         # uncomment to reset softdevice on board. !WARNING! - it can brick board!
