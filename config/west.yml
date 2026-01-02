@@ -7,10 +7,10 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3 # set to desired version 
+      revision: main   # set to desired version (was v0.3)
       import: app/west.yml
     - name: zmk-auto-layer # used for auto_layer functionalities in keymap
       remote: urob
-      revision: v0.3 # set to same version as zmk
+      revision: main   # set to same version as zmk 
   self:
     path: config
