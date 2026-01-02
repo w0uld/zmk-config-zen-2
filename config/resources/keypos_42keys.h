@@ -1,4 +1,4 @@
-// Credit goes to Urob: https://github.com/urob/zmk-nodefree-config/
+// Credit goes to Urob: https://github.com/urob/zmk-helpers
 
 /*                                      42 KEY MATRIX / LAYOUT MAPPING
   ╭────────────────────────┬────────────────────────╮ ╭─────────────────────────┬─────────────────────────╮

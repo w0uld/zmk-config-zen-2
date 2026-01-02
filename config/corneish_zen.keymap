@@ -11,9 +11,8 @@
 #include <dt-bindings/zmk/pointing.h>       // to enable mouse
 
 /* userspace modules */
+#include "zmk-helpers/helper.h"             // https://github.com/urob/zmk-helper
 #include "resources/keypos_42keys.h"        // human readable bindings
-#include "resources/z_behavior.h"           // behavior preprocessor
-#include "resources/z_combo.h"              // Z_COMBO
 #include "resources/z_autoshift_legacy.h"   // autoshift
 
 /* layer aliases */

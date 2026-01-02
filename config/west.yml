@@ -9,5 +9,8 @@ manifest:
       remote: zmkfirmware
       revision: main   # set to desired version (was v0.3)
       import: app/west.yml
+    - name: zmk-helpers # https://github.com/urob/zmk-helpers
+      remote: urob
+      revision: main
   self:
     path: config
