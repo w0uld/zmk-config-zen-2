@@ -14,6 +14,7 @@
 #include "zmk-helpers/helper.h"         // https://github.com/urob/zmk-helper
 #include "zmk-helpers/key-labels/42.h"  // human readable bindings
 #include "resources/z_autoshift.h"      // autoshift
+#include "resources/z_autoshift_trans.h"      // autoshift trans - TESTING
 
 /* layer aliases */
 #define QWER  0
@@ -185,7 +186,7 @@ ZMK_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         Z_ALL,     _COMBO
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
      &trans          &kp LGUI        &kp LALT        &kp LCTRL       &kp LSHFT       &kp F13             AS(LBKT)        AS(N4)          AS(N5)          AS(N6)          AS(RBKT)        AS(BSLH)
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-     &trans          AS(SEMI)        AS(APOS)        AS(COMMA)       AS(DOT)         &kp KP_DOT          AS(GRAVE)       AS(N1)          AS(N2)          AS(N3)          AS(FSLH)        AS(EQUAL)
+     &trans          AST(0)          AS(APOS)        AS(COMMA)       AS(DOT)         &kp KP_DOT          AS(GRAVE)       AS(N1)          AS(N2)          AS(N3)          AS(FSLH)        AS(EQUAL)
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
                                                      &trans          &trans          &trans              &trans          AS(N0)          &tog NMBR
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
