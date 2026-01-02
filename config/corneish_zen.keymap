@@ -17,13 +17,14 @@
 
 /* layer aliases */
 #define QWER  0
-#define CLMK  1
-#define GAME  2
-#define MOUS  3
-#define NMBR  4
-#define NAVI  5
+#define QWER_AS 1
+#define CLMK  2
+#define GAME  3
+#define MOUS  4
+#define NMBR  5
+#define NAVI  6
 #undef  Z_ALL
-#define Z_ALL QWER CLMK GAME NMBR NAVI MOUS
+#define Z_ALL QWER CLMK GAME NMBR NAVI MOUS QWER_AS
 
 /* timings */
 #define _QUIKTAP_MS  250
@@ -71,9 +72,10 @@ ZMK_COMBO(combo_locknum0,     &kp KP_NLCK,    RH0 RT5,         Z_ALL,     _COMBO
 ZMK_COMBO(combo_lockcaps,     &kp CLCK,       RH0 RM5,         Z_ALL,     _COMBO_LONG, _PRIOR_LONG)
 ZMK_COMBO(combo_lockscrl,     &kp SLCK,       RH0 RB5,         Z_ALL,     _COMBO_LONG, _PRIOR_LONG)
 
-ZMK_COMBO(combo_layerclmk,    &tog CLMK,      RH2 LH2 LH1,     Z_ALL,     _COMBO_MEDM, _PRIOR_LONG)
+ZMK_COMBO(combo_layerclmk,    &tog CLMK,      RH2 LH1 LH0,     Z_ALL,     _COMBO_MEDM, _PRIOR_LONG)
 ZMK_COMBO(combo_layergame,    &tog GAME,      RH2 LH1 LH0,     Z_ALL,     _COMBO_MEDM, _PRIOR_LONG)
 ZMK_COMBO(combo_layermous,    &tog MOUS,      RH1 RH2,         Z_ALL,     _COMBO_MEDM, _PRIOR_LONG)
+ZMK_COMBO(combo_layerqwer_as, &tog QWER_AS,   RH2 LH2 LH1 LH0, Z_ALL,     _COMBO_MEDM, _PRIOR_LONG)
 
 ZMK_COMBO(combo_out_tog,      &out OUT_TOG,   RT0 RB0,         Z_ALL,     _COMBO_LONG, _PRIOR_LONG) // uses outputs.h
 ZMK_COMBO(combo_out_usb,      &out OUT_USB,   RT1 RB1,         Z_ALL,     _COMBO_LONG, _PRIOR_LONG) // uses outputs.h
@@ -85,14 +87,14 @@ ZMK_COMBO(combo_ble_2,        &bt BT_SEL 1,   LT3 LB3,         Z_ALL,     _COMBO
 ZMK_COMBO(combo_ble_3,        &bt BT_SEL 2,   LT2 LB2,         Z_ALL,     _COMBO_LONG, _PRIOR_LONG)
 ZMK_COMBO(combo_ble_4,        &bt BT_SEL 3,   LT1 LB1,         Z_ALL,     _COMBO_LONG, _PRIOR_LONG)
 
-ZMK_COMBO(combo_lctrl,        &sk LCTRL,      LM1 LM2 LM3,     QWER CLMK, _COMBO_MEDM, _PRIOR_LONG)
-ZMK_COMBO(combo_rctrl,        &sk LCTRL,      RM1 RM2 RM3,     QWER CLMK, _COMBO_MEDM, _PRIOR_LONG)
-ZMK_COMBO(combo_lgui,         &sk LGUI,       LM1 LT2 LM3,     QWER CLMK, _COMBO_MEDM, _PRIOR_LONG)
-ZMK_COMBO(combo_rgui,         &sk LGUI,       RM1 RT2 RM3,     QWER CLMK, _COMBO_MEDM, _PRIOR_LONG)
-ZMK_COMBO(combo_lctrlshft,    &sk LS(LCTRL),  LM1 LM2 LM3 LM4, QWER CLMK, _COMBO_LONG, _PRIOR_LONG)
-ZMK_COMBO(combo_rctrlshft,    &sk LS(LCTRL),  RM1 RM2 RM3 RM4, QWER CLMK, _COMBO_LONG, _PRIOR_LONG)
-ZMK_COMBO(combo_lguishft,     &sk LS(LGUI),   LM1 LT2 LM3 LM4, QWER CLMK, _COMBO_LONG, _PRIOR_LONG)
-ZMK_COMBO(combo_rguishft,     &sk LS(LGUI),   RM1 RT2 RM3 RM4, QWER CLMK, _COMBO_LONG, _PRIOR_LONG)
+ZMK_COMBO(combo_lctrl,        &sk LCTRL,      LM1 LM2 LM3,     QWER QWER_AS CLMK, _COMBO_MEDM, _PRIOR_LONG)
+ZMK_COMBO(combo_rctrl,        &sk LCTRL,      RM1 RM2 RM3,     QWER QWER_AS CLMK, _COMBO_MEDM, _PRIOR_LONG)
+ZMK_COMBO(combo_lgui,         &sk LGUI,       LM1 LT2 LM3,     QWER QWER_AS CLMK, _COMBO_MEDM, _PRIOR_LONG)
+ZMK_COMBO(combo_rgui,         &sk LGUI,       RM1 RT2 RM3,     QWER QWER_AS CLMK, _COMBO_MEDM, _PRIOR_LONG)
+ZMK_COMBO(combo_lctrlshft,    &sk LS(LCTRL),  LM1 LM2 LM3 LM4, QWER QWER_AS CLMK, _COMBO_LONG, _PRIOR_LONG)
+ZMK_COMBO(combo_rctrlshft,    &sk LS(LCTRL),  RM1 RM2 RM3 RM4, QWER QWER_AS CLMK, _COMBO_LONG, _PRIOR_LONG)
+ZMK_COMBO(combo_lguishft,     &sk LS(LGUI),   LM1 LT2 LM3 LM4, QWER QWER_AS CLMK, _COMBO_LONG, _PRIOR_LONG)
+ZMK_COMBO(combo_rguishft,     &sk LS(LGUI),   RM1 RT2 RM3 RM4, QWER QWER_AS CLMK, _COMBO_LONG, _PRIOR_LONG)
 
 ZMK_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         Z_ALL,     _COMBO_MEDM, _PRIOR_LONG)
 
@@ -125,6 +127,21 @@ ZMK_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         Z_ALL,     _COMBO
      &kp LCTRL       &kp A           &kp S           &kp D           &kp F           &kp G               &kp H           &kp J           &kp K           &kp L           &kp SEMI        &kp APOS
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
      &kp LSHFT       &kp Z           &kp X           &kp C           &kp V           &kp B               &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &mt LSHFT EQUAL
+// ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
+                                                     &kp LALT        &kp SPACE       &sl NMBR            &lt NAVI BSPC   &kp RALT        &kp F24
+//                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
+                        >;
+                };
+
+                QWERAS_layer {
+                    display-name = "qwer_as";
+                    bindings = <
+// ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
+     &lt NAVI TAB    AS(Q)           AS(W)           AS(E)           AS(R)           AS(T)               AS(Y)           AS(U)           AS(I)           AS(O)           AS(P)           AS(MINUS)
+// ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
+     &kp LCTRL       AS(A)           AS(S)           AS(D)           AS(F)           AS(G)               AS(H)           AS(J)           AS(K)           AS(L)           AS(SEMI)        AS(APOS)
+// ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
+     &kp LSHFT       AS(Z)           AS(X)           AS(C)           AS(V)           AS(B)               AS(N)           AS(M)           AS(COMMA)       AS(DOT)         AS(FSLH)        AS(EQUAL)
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
                                                      &kp LALT        &kp SPACE       &sl NMBR            &lt NAVI BSPC   &kp RALT        &kp F24
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
