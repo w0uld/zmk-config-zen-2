@@ -24,7 +24,7 @@
 #define NMBR  4
 #define NAVI  5
 #undef  Z_ALL
-#define Z_ALL CLMK QWER GAME NMBR NAVI MOUS
+#define Z_ALL QWER CLMK GAME NMBR NAVI MOUS
 
 /* timings */
 #define _QUIKTAP_MS  250
@@ -36,13 +36,6 @@
 #define _COMBO_MEDM  30
 #define _COMBO_LONG  50
 
-/* ignorecodes */
-#define _IGNORE_NUMBER     N0 N1 N2 N3 N4 N5 N6 N7 N8 N9
-#define _IGNORE_NUMPAD     KP_N0 KP_N1 KP_N2 KP_N3 KP_N4 KP_N5 KP_N6 KP_N7 KP_N8 KP_N9 KP_DOT KP_EQUAL KP_DIVIDE KP_MULTIPLY KP_MINUS KP_PLUS
-#define _IGNORE_NAVGTN     LEFT RIGHT UP DOWN PG_UP PG_DN HOME END
-#define _IGNORE_SYMBOL     DOT COMMA PLUS MINUS STAR FSLH EQUAL SEMI
-#define _IGNORE_OTHERS     BSPC DEL TAB
-
 /* mouse settings */
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 180   // default: 10
@@ -51,8 +44,8 @@
 &mt {
     quick-tap-ms    = <_QUIKTAP_MS>;
     tapping-term-ms = <_TAPTERM_MS>;
-    flavor          = "hold-preferred";  //originally balanced
-    retro-tap;                           //enabling retro-tap
+    flavor          = "hold-preferred";  // originally balanced 
+    retro-tap;                           // enabling retro-tap
 };
 
 &lt {
@@ -62,58 +55,49 @@
     retro-tap;                          //enabling retro-tap
 };
 
-
-/* ref: https://github.com/urob/zmk-auto-layer */
-ZMK_BEHAVIOR(auto_lyr, auto_layer,
-    continue-list   = <_IGNORE_OTHERS _IGNORE_NAVGTN _IGNORE_NUMPAD _IGNORE_NUMBER _IGNORE_SYMBOL>;
-    ignore-modifiers;
-)
-
-
 /* combos, uses z_combo.h */
 // syntax: Z_COMBO(name, combo_bindings, keypos, combo_timeout, combo_prioridle, combo_layers)
-Z_COMBO(combo_esc,          &kp ESC,        LT5 LT4,         _COMBO_MEDM, _PRIOR_ZERO, Z_ALL)
-Z_COMBO(combo_enter,        &kp RET,        RB3 RB2 RB1,     _COMBO_LONG, _PRIOR_ZERO, Z_ALL)
+Z_COMBO(combo_esc,          &kp ESC,        LT5 LT4,          _COMBO_MEDM, _PRIOR_ZERO, Z_ALL)
+Z_COMBO(combo_enter,        &kp RET,        RB3 RB2 RB1,      _COMBO_LONG, _PRIOR_ZERO, Z_ALL)
 
-Z_COMBO(combo_backslash,    AS(BSLH),       LB5 LB4,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
-Z_COMBO(combo_grave,        AS(GRAVE),      LH2 LH1,         _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
+Z_COMBO(combo_backslash,    AS(BSLH),       LB5 LB4,          _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
+Z_COMBO(combo_grave,        AS(GRAVE),      LH2 LH1,          _COMBO_MEDM, _PRIOR_IDLE, Z_ALL)
 
-Z_COMBO(combo_lctrl,        &sk LCTRL,      LM1 LM2 LM3,     _COMBO_MEDM, _PRIOR_LONG, CLMK QWER)
-Z_COMBO(combo_rctrl,        &sk LCTRL,      RM1 RM2 RM3,     _COMBO_MEDM, _PRIOR_LONG, CLMK QWER)
-Z_COMBO(combo_lgui,         &sk LGUI,       LM1 LT2 LM3,     _COMBO_MEDM, _PRIOR_LONG, CLMK QWER)
-Z_COMBO(combo_rgui,         &sk LGUI,       RM1 RT2 RM3,     _COMBO_MEDM, _PRIOR_LONG, CLMK QWER)
-Z_COMBO(combo_lctrlshft,    &sk LS(LCTRL),  LM1 LM2 LM3 LM4, _COMBO_LONG, _PRIOR_LONG, CLMK QWER)
-Z_COMBO(combo_rctrlshft,    &sk LS(LCTRL),  RM1 RM2 RM3 RM4, _COMBO_LONG, _PRIOR_LONG, CLMK QWER)
-Z_COMBO(combo_lguishft,     &sk LS(LGUI),   LM1 LT2 LM3 LM4, _COMBO_LONG, _PRIOR_LONG, CLMK QWER)
-Z_COMBO(combo_rguishft,     &sk LS(LGUI),   RM1 RT2 RM3 RM4, _COMBO_LONG, _PRIOR_LONG, CLMK QWER)
-Z_COMBO(combo_lctrlgui,     &sk LG(LCTRL),  LM1 LM2 LM3 LT2, _COMBO_LONG, _PRIOR_LONG, CLMK QWER)
-Z_COMBO(combo_rctrlgui,     &sk LG(LCTRL),  RM1 RM2 RM3 RT2, _COMBO_LONG, _PRIOR_LONG, CLMK QWER)
+Z_COMBO(combo_lctrl,        &sk LCTRL,      LM1 LM2 LM3,      _COMBO_MEDM, _PRIOR_LONG, QWER CLMK)
+Z_COMBO(combo_rctrl,        &sk LCTRL,      RM1 RM2 RM3,      _COMBO_MEDM, _PRIOR_LONG, QWER CLMK)
+Z_COMBO(combo_lgui,         &sk LGUI,       LM1 LT2 LM3,      _COMBO_MEDM, _PRIOR_LONG, QWER CLMK)
+Z_COMBO(combo_rgui,         &sk LGUI,       RM1 RT2 RM3,      _COMBO_MEDM, _PRIOR_LONG, QWER CLMK)
+Z_COMBO(combo_lctrlshft,    &sk LS(LCTRL),  LM1 LM2 LM3 LM4,  _COMBO_LONG, _PRIOR_LONG, QWER CLMK)
+Z_COMBO(combo_rctrlshft,    &sk LS(LCTRL),  RM1 RM2 RM3 RM4,  _COMBO_LONG, _PRIOR_LONG, QWER CLMK)
+Z_COMBO(combo_lguishft,     &sk LS(LGUI),   LM1 LT2 LM3 LM4,  _COMBO_LONG, _PRIOR_LONG, QWER CLMK)
+Z_COMBO(combo_rguishft,     &sk LS(LGUI),   RM1 RT2 RM3 RM4,  _COMBO_LONG, _PRIOR_LONG, QWER CLMK)
+Z_COMBO(combo_lctrlgui,     &sk LG(LCTRL),  LM1 LM2 LM3 LT2,  _COMBO_LONG, _PRIOR_LONG, QWER CLMK)
+Z_COMBO(combo_rctrlgui,     &sk LG(LCTRL),  RM1 RM2 RM3 RT2,  _COMBO_LONG, _PRIOR_LONG, QWER CLMK)
 
-Z_COMBO(combo_copy,         &kp LC(INS),    LB4 LB3 LB2,     _COMBO_LONG, _PRIOR_IDLE, Z_ALL)
-Z_COMBO(combo_paste,        &kp LS(INS),    LB3 LB2 LB1,     _COMBO_LONG, _PRIOR_IDLE, Z_ALL)
+Z_COMBO(combo_copy,         &kp LC(INS),    LB4 LB3 LB2,      _COMBO_LONG, _PRIOR_IDLE, Z_ALL)
+Z_COMBO(combo_paste,        &kp LS(INS),    LB3 LB2 LB1,      _COMBO_LONG, _PRIOR_IDLE, Z_ALL)
 
-Z_COMBO(combo_locknum0,     &kp KP_NLCK,    RH0 RT5,         _COMBO_LONG, _PRIOR_LONG, Z_ALL)
-Z_COMBO(combo_lockcaps,     &kp CLCK,       RH0 RM5,         _COMBO_LONG, _PRIOR_LONG, Z_ALL)
-Z_COMBO(combo_lockscrl,     &kp SLCK,       RH0 RB5,         _COMBO_LONG, _PRIOR_LONG, Z_ALL)
+Z_COMBO(combo_locknum0,     &kp KP_NLCK,    RH0 RT5,          _COMBO_LONG, _PRIOR_LONG, Z_ALL)
+Z_COMBO(combo_lockcaps,     &kp CLCK,       RH0 RM5,          _COMBO_LONG, _PRIOR_LONG, Z_ALL)
+Z_COMBO(combo_lockscrl,     &kp SLCK,       RH0 RB5,          _COMBO_LONG, _PRIOR_LONG, Z_ALL)
 
-Z_COMBO(combo_ble_clr,      &bt BT_CLR,     RT0 RB0,         _COMBO_LONG, _PRIOR_LONG, Z_ALL)
-Z_COMBO(combo_ble_1,        &bt BT_SEL 0,   RT4 RB4,         _COMBO_LONG, _PRIOR_LONG, Z_ALL)
-Z_COMBO(combo_ble_2,        &bt BT_SEL 1,   RT3 RB3,         _COMBO_LONG, _PRIOR_LONG, Z_ALL)
-Z_COMBO(combo_ble_3,        &bt BT_SEL 2,   RT2 RB2,         _COMBO_LONG, _PRIOR_LONG, Z_ALL)
-Z_COMBO(combo_ble_4,        &bt BT_SEL 3,   RT1 RB1,         _COMBO_LONG, _PRIOR_LONG, Z_ALL)
+Z_COMBO(combo_ble_clr,      &bt BT_CLR,     LT0 LB0,          _COMBO_LONG, _PRIOR_LONG, Z_ALL)
+Z_COMBO(combo_ble_1,        &bt BT_SEL 0,   LT4 LB4,          _COMBO_LONG, _PRIOR_LONG, Z_ALL)
+Z_COMBO(combo_ble_2,        &bt BT_SEL 1,   LT3 LB3,          _COMBO_LONG, _PRIOR_LONG, Z_ALL)
+Z_COMBO(combo_ble_3,        &bt BT_SEL 2,   LT2 LB2,          _COMBO_LONG, _PRIOR_LONG, Z_ALL)
+Z_COMBO(combo_ble_4,        &bt BT_SEL 3,   LT1 LB1,          _COMBO_LONG, _PRIOR_LONG, Z_ALL)
 
-Z_COMBO(combo_out_tog,      &out OUT_TOG,   LT0 LB0,         _COMBO_LONG, _PRIOR_LONG, Z_ALL) // uses outputs.h
-Z_COMBO(combo_out_usb,      &out OUT_USB,   LT5 LB5,         _COMBO_LONG, _PRIOR_LONG, Z_ALL) // uses outputs.h
-Z_COMBO(combo_out_blt,      &out OUT_BLE,   LT4 LB4,         _COMBO_LONG, _PRIOR_LONG, Z_ALL) // uses outputs.h
+Z_COMBO(combo_out_tog,      &out OUT_TOG,   RT0 RB0,          _COMBO_LONG, _PRIOR_LONG, Z_ALL) // uses outputs.h
+Z_COMBO(combo_out_usb,      &out OUT_USB,   RT1 RB1,          _COMBO_LONG, _PRIOR_LONG, Z_ALL) // uses outputs.h
+Z_COMBO(combo_out_blt,      &out OUT_BLE,   RT2 RB2,          _COMBO_LONG, _PRIOR_LONG, Z_ALL) // uses outputs.h
  
-Z_COMBO(combo_layerqwer,    &tog CLMK,      LH2 RH2,         _COMBO_MEDM, _PRIOR_LONG, Z_ALL)
-Z_COMBO(combo_layergame,    &tog GAME,      LH0 RH0,         _COMBO_MEDM, _PRIOR_LONG, Z_ALL)
-Z_COMBO(combo_layermous,    &tog MOUS,      RH1 RH2,         _COMBO_MEDM, _PRIOR_LONG, Z_ALL)
+Z_COMBO(combo_layerclmk,    &tog CLMK,      RH2 LH2 LH1,      _COMBO_MEDM, _PRIOR_LONG, Z_ALL)
+Z_COMBO(combo_layergame,    &tog GAME,      RH2 LH1 LH0,      _COMBO_MEDM, _PRIOR_LONG, Z_ALL)
+Z_COMBO(combo_layermous,    &tog MOUS,      RH1 RH2,          _COMBO_MEDM, _PRIOR_LONG, Z_ALL)
+Z_COMBO(combo_layernmbr,    &tog NMBR,      LH0 LH2,          _COMBO_MEDM, _PRIOR_LONG, Z_ALL)
+Z_COMBO(combo_layernavi,    &tog NAVI,      RH0 RH2,          _COMBO_MEDM, _PRIOR_LONG, Z_ALL)
 
-Z_COMBO(combo_layernmbr,    &tog NMBR,      LH0 LH2,         _COMBO_MEDM, _PRIOR_LONG, Z_ALL)
-Z_COMBO(combo_layernavi,    &tog NAVI,      RH0 RH2,         _COMBO_MEDM, _PRIOR_LONG, Z_ALL)
-
-Z_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         _COMBO_MEDM, _PRIOR_LONG, CLMK QWER)
+Z_COMBO(combo_studio,       &studio_unlock, LT5 RT5,          _COMBO_MEDM, _PRIOR_LONG, QWER CLMK)
 
 
 
@@ -178,7 +162,7 @@ Z_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         _COMBO_MEDM, _PRIOR
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
      &mt LSHFT G     &kp LSHFT       &kp Z           &kp X           &kp C           &kp V               &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &kp LSHFT
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                                     &trans          &trans          &trans              &trans          &tog GAME       &kp RET
+                                                     &trans          &trans          &trans              &trans          &trans          &tog GAME
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
                         >;
                 };
@@ -208,7 +192,7 @@ Z_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         _COMBO_MEDM, _PRIOR
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
      &trans          AS(SEMI)        AS(APOS)        AS(COMMA)       AS(DOT)         &kp KP_DOT          AS(GRAVE)       AS(N1)          AS(N2)          AS(N3)          AS(FSLH)        AS(EQUAL)
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                                     &trans          &trans          &trans              &trans          AS(N0)          &kp KP_DOT
+                                                     &trans          &trans          &trans              &trans          AS(N0)          &tog NMBR
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
                         >;
                 };
@@ -223,7 +207,7 @@ Z_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         _COMBO_MEDM, _PRIOR
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
      &trans          &kp F9          &kp F10         &kp F11         &kp F12         &kp F15             &msc SCRL_DOWN  &kp C_VOL_DN    &kp C_MUTE      &kp C_VOL_UP    &kp C_PP        &kp LSHFT
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                                     &trans          &trans          &trans              &trans          &kp DEL         &kp RET
+                                                     &trans          &trans          &trans              &trans          &kp DEL         &tog NAVI
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
                         >;
                 };
