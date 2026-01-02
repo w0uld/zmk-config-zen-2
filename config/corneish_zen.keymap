@@ -87,8 +87,6 @@ ZMK_COMBO(combo_out_tog,      &out OUT_TOG,   RT0 RB0,         Z_ALL,     _COMBO
 ZMK_COMBO(combo_out_usb,      &out OUT_USB,   RT1 RB1,         Z_ALL,     _COMBO_LONG, _PRIOR_LONG) // uses outputs.h
 ZMK_COMBO(combo_out_blt,      &out OUT_BLE,   RT2 RB2,         Z_ALL,     _COMBO_LONG, _PRIOR_LONG) // uses outputs.h
 
-ZMK_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         Z_ALL,     _COMBO_MEDM, _PRIOR_LONG)
-
 ZMK_COMBO(combo_lctrl,        &sk LCTRL,      LM1 LM2 LM3,     QWER CLMK, _COMBO_MEDM, _PRIOR_LONG)
 ZMK_COMBO(combo_rctrl,        &sk LCTRL,      RM1 RM2 RM3,     QWER CLMK, _COMBO_MEDM, _PRIOR_LONG)
 ZMK_COMBO(combo_lgui,         &sk LGUI,       LM1 LT2 LM3,     QWER CLMK, _COMBO_MEDM, _PRIOR_LONG)
@@ -99,6 +97,8 @@ ZMK_COMBO(combo_lguishft,     &sk LS(LGUI),   LM1 LT2 LM3 LM4, QWER CLMK, _COMBO
 ZMK_COMBO(combo_rguishft,     &sk LS(LGUI),   RM1 RT2 RM3 RM4, QWER CLMK, _COMBO_LONG, _PRIOR_LONG)
 ZMK_COMBO(combo_lctrlgui,     &sk LG(LCTRL),  LM1 LM2 LM3 LT2, QWER CLMK, _COMBO_LONG, _PRIOR_LONG)
 ZMK_COMBO(combo_rctrlgui,     &sk LG(LCTRL),  RM1 RM2 RM3 RT2, QWER CLMK, _COMBO_LONG, _PRIOR_LONG)
+
+ZMK_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         Z_ALL,     _COMBO_MEDM, _PRIOR_LONG)
 
 /* keymap */
 /*
