@@ -4,16 +4,10 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
-    - name: nmunnich
-      url-baes: https://github.com/nmunnich
   projects:
-#    - name: zmk
-#      remote: zmkfirmware
-#      revision: main   # set to desired version (was v0.3)
-#      import: app/west.yml
-    - name: zmk # https://github.com/urob/zmk-helpers
-      remote: nmunnich
-      revision: behavior-event
+    - name: zmk
+      remote: zmkfirmware
+      revision: main   # set to desired version (was v0.3)
       import: app/west.yml
     - name: zmk-helpers # https://github.com/urob/zmk-helpers
       remote: urob
