@@ -17,7 +17,7 @@
 
 /* layer aliases */
 #define QWER  0
-#define THSH 1
+#define THSH  1
 #define CLMK  2
 #define GAME  3
 #define MOUS  4
@@ -73,14 +73,13 @@ ZMK_COMBO(combo_lockcaps,     &kp CLCK,       RH0 RM5,         Z_ALL,          _
 ZMK_COMBO(combo_lockscrl,     &kp SLCK,       RH0 RB5,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG)
 
 ZMK_COMBO(combo_layerthsh,    &tog THSH,      RH2 LH2 LH1 LH0, Z_ALL,          _COMBO_MEDM, _PRIOR_LONG)
-ZMK_COMBO(combo_layerclmk,    &tog CLMK,      RH2 LH1 LH0,     Z_ALL,          _COMBO_MEDM, _PRIOR_LONG)
+ZMK_COMBO(combo_layerclmk,    &tog CLMK,      RH2 LH2 LH1,     Z_ALL,          _COMBO_MEDM, _PRIOR_LONG)
 ZMK_COMBO(combo_layergame,    &tog GAME,      RH2 LH1 LH0,     Z_ALL,          _COMBO_MEDM, _PRIOR_LONG)
-ZMK_COMBO(combo_layermous,    &tog MOUS,      RH1 RH2,         Z_ALL,          _COMBO_MEDM, _PRIOR_LONG)
+ZMK_COMBO(combo_layermous,    &tog MOUS,      RH2 RH1,         Z_ALL,          _COMBO_MEDM, _PRIOR_LONG)
 
 ZMK_COMBO(combo_out_tog,      &out OUT_TOG,   RT0 RB0,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG) // uses outputs.h
 ZMK_COMBO(combo_out_usb,      &out OUT_USB,   RT1 RB1,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG) // uses outputs.h
 ZMK_COMBO(combo_out_blt,      &out OUT_BLE,   RT2 RB2,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG) // uses outputs.h
-
 ZMK_COMBO(combo_ble_clr,      &bt BT_CLR,     LT0 LB0,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG)
 ZMK_COMBO(combo_ble_1,        &bt BT_SEL 0,   LT4 LB4,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG)
 ZMK_COMBO(combo_ble_2,        &bt BT_SEL 1,   LT3 LB3,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG)
