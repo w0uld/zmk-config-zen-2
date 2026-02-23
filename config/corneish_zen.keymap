@@ -93,7 +93,7 @@ ZMK_COMBO(combo_rctrlshft,    &sk LS(LCTRL),  RM1 RM2 RM3 RM4, QWER CLMK,      _
 ZMK_COMBO(combo_lguishft,     &sk LS(LGUI),   LM1 LT2 LM3 LM4, QWER CLMK,      _COMBO_LONG, _PRIOR_LONG)
 ZMK_COMBO(combo_rguishft,     &sk LS(LGUI),   RM1 RT2 RM3 RM4, QWER CLMK,      _COMBO_LONG, _PRIOR_LONG)
 
-ZMK_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         Z_ALL,          _COMBO_MEDM, _PRIOR_LONG)
+// ZMK_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         Z_ALL,          _COMBO_MEDM, _PRIOR_LONG)
 
 /* keymap */
 / {
