@@ -78,6 +78,7 @@ ZMK_COMBO(combo_out_tog,      &out OUT_TOG,   RT0 RB0,         Z_ALL,          _
 ZMK_COMBO(combo_out_usb,      &out OUT_USB,   RT1 RB1,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG) // uses outputs.h
 ZMK_COMBO(combo_out_blt,      &out OUT_BLE,   RT2 RB2,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG) // uses outputs.h
 ZMK_COMBO(combo_ble_clr,      &bt BT_CLR,     LT0 LB0,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG)
+ZMK_COMBO(combo_ble_clrall    &bt BT_CLR_ALL, LT0 LB5,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG)
 ZMK_COMBO(combo_ble_1,        &bt BT_SEL 0,   LT4 LB4,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG)
 ZMK_COMBO(combo_ble_2,        &bt BT_SEL 1,   LT3 LB3,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG)
 ZMK_COMBO(combo_ble_3,        &bt BT_SEL 2,   LT2 LB2,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG)
