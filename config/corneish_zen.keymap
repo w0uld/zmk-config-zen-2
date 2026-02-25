@@ -7,7 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>    // to enable OUT_USB, OUT_BLE, OUT_TOG
+// #include <dt-bindings/zmk/outputs.h>    // to enable OUT_USB, OUT_BLE, OUT_TOG
 #include <dt-bindings/zmk/pointing.h>   // to enable mouse
 
 /* userspace modules */
@@ -74,9 +74,9 @@ ZMK_COMBO(combo_layerclmk,    &tog CLMK,      RH2 LH2 LH1,     Z_ALL,          _
 ZMK_COMBO(combo_layergame,    &tog GAME,      RH2 LH1 LH0,     Z_ALL,          _COMBO_MEDM, _PRIOR_LONG)
 ZMK_COMBO(combo_layermous,    &tog MOUS,      RH2 RH1,         Z_ALL,          _COMBO_MEDM, _PRIOR_LONG)
 
-ZMK_COMBO(combo_out_tog,      &out OUT_TOG,   RT0 RB0,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG) // uses outputs.h
-ZMK_COMBO(combo_out_usb,      &out OUT_USB,   RT1 RB1,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG) // uses outputs.h
-ZMK_COMBO(combo_out_blt,      &out OUT_BLE,   RT2 RB2,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG) // uses outputs.h
+// ZMK_COMBO(combo_out_tog,      &out OUT_TOG,   RT0 RB0,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG) // uses outputs.h
+// ZMK_COMBO(combo_out_usb,      &out OUT_USB,   RT1 RB1,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG) // uses outputs.h
+// ZMK_COMBO(combo_out_blt,      &out OUT_BLE,   RT2 RB2,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG) // uses outputs.h
 ZMK_COMBO(combo_ble_clr,      &bt BT_CLR,     LT0 LB0,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG)
 ZMK_COMBO(combo_ble_clrall,   &bt BT_CLR_ALL, LT0 LB5,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG)
 ZMK_COMBO(combo_ble_1,        &bt BT_SEL 0,   LT4 LB4,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG)
