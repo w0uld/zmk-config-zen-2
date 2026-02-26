@@ -23,7 +23,7 @@
 #define NMBR  3
 #define NAVI  4
 #undef  Z_ALL
-#define Z_ALL QWER CLMK GAME NMBR NAVI MOUS
+#define Z_ALL QWER CLMK GAME NMBR NAVI // MOUS
 
 /* timings */
 #define _QUIKTAP_MS  250
