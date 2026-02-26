@@ -2,8 +2,8 @@
 
 include:
   - board: corneish_zen_v2_left # v0.3: corneish_zen_v2_left; main: corneish_zen_left//zmk - https://zmk.dev/docs/hardware
-    # snippet: studio-rpc-usb-uart
-    # cmake-args: -DCONFIG_ZMK_STUDIO=y
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: corneish_zen_left
   - board: corneish_zen_v2_right # v0.3: corneish_zen_v2_right; main: corneish_zen_right//zmk - https://zmk.dev/docs/hardware
     artifact-name: corneish_zen_right
