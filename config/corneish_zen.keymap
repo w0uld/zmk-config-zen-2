@@ -131,7 +131,7 @@ ZMK_COMBO(combo_rguishft,     &sk LS(LGUI),   RM1 RT2 RM3 RM4, QWER CLMK,      _
           };
 
           CLMK_layer {
-               display-name = "clmk";
+               display-name = "clmk"; 
                bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
      &trans          &kp Q           &kp W           &kp F           &kp P           &kp G               &kp J           &kp L           &kp U           &kp Y           &kp SEMI        &kp MINUS
