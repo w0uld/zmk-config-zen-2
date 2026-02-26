@@ -8,7 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 // #include <dt-bindings/zmk/outputs.h>    // to enable OUT_USB, OUT_BLE, OUT_TOG
-#include <dt-bindings/zmk/pointing.h>   // to enable mouse
+// #include <dt-bindings/zmk/pointing.h>   // to enable mouse
 
 /* userspace modules */
 #include "zmk-helpers/helper.h"         // https://github.com/urob/zmk-helper
@@ -19,9 +19,9 @@
 #define QWER  0
 #define CLMK  1
 #define GAME  2
-#define MOUS  3
-#define NMBR  4
-#define NAVI  5
+// #define MOUS  3
+#define NMBR  3
+#define NAVI  4
 #undef  Z_ALL
 #define Z_ALL QWER CLMK GAME NMBR NAVI MOUS
 
@@ -36,8 +36,8 @@
 #define _COMBO_LONG  50
 
 /* mouse settings */
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 180   // default: 10
+// #define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // default: 600
+// #define ZMK_POINTING_DEFAULT_SCRL_VAL 180   // default: 10
 
 /* adjustments */
 &mt {
@@ -160,7 +160,7 @@ ZMK_COMBO(combo_rguishft,     &sk LS(LGUI),   RM1 RT2 RM3 RM4, QWER CLMK,      _
                >;
           };
 
-          MOUS_layer {
+/*          MOUS_layer {
                display-name = "mouse";
                bindings = <
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
@@ -173,7 +173,7 @@ ZMK_COMBO(combo_rguishft,     &sk LS(LGUI),   RM1 RT2 RM3 RM4, QWER CLMK,      _
                                                      &trans          &trans          &trans              &trans          &trans          &tog MOUS
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
                >;
-          };
+          }; */
 
           NMBR_layer {
                display-name = "nmbr";
