@@ -8,6 +8,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>    // to enable OUT_USB, OUT_BLE, OUT_TOG
+#include <dt-bindings/zmk/pointing.h>    // to enable mouse
+
 
 /* userspace modules */
 #include "zmk-helpers/helper.h"         // https://github.com/urob/zmk-helper

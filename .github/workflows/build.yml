@@ -3,6 +3,5 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3   # v0.3 zmk branch
-#    uses: LOWPROKB/zmk/.github/workflows/build-user-config.yml@corne-ish-zen-v2   # original branch
-#    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main   # bleeding edge zmk branch
+#    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3   # v0.3 zmk branch
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main   # bleeding edge zmk branch
