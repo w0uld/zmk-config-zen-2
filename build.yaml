@@ -11,7 +11,11 @@ include:
     
   - board: nice_nano//zmk
     shield: settings_reset
-    artifact-name: x_niceNano_reset
+    artifact-name: y_niceNano_reset
+
+  - board: xiao_ble//zmk
+    shield: settings_reset
+    artifact-name: y_xiaoBLE_reset
     
   - board: xiao_ble//zmk # dongle switching instructions: https://docs.slicemk.com/firmware/zmk/wireless/dongle/
     shield: corneish_zen_dongle
