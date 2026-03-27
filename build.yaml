@@ -1,4 +1,4 @@
-# https://zmk.dev/docs/config/system#snippets
+# https://zmk.dev/docs/config/system#snippets 
 
 include:
   - board: corneish_zen_left//zmk # v0.3: corneish_zen_v2_left; main: corneish_zen_left//zmk - https://zmk.dev/docs/hardware
