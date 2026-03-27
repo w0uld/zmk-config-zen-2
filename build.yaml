@@ -13,7 +13,7 @@ include:
     shield: settings_reset
     artifact-name: niceNano_reset
     
-  - board: xiao_ble//zmk
+  - board: xiao_ble//zmk # dongle switching instructions: https://docs.slicemk.com/firmware/zmk/wireless/dongle/
     shield: corneish_zen_dongle
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=n
