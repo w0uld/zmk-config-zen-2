@@ -4,6 +4,21 @@ include:
   - board: corneish_zen_left//zmk # v0.3: corneish_zen_v2_left; main: corneish_zen_left//zmk - https://zmk.dev/docs/hardware
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-    artifact-name: corneish_zen_left
+    artifact-name: zenv2_Left_master
+    
   - board: corneish_zen_right//zmk # v0.3: corneish_zen_v2_right; main: corneish_zen_right//zmk - https://zmk.dev/docs/hardware
-    artifact-name: corneish_zen_right
+    artifact-name: zenv2_Right_slave
+    
+  - board: nice_nano//zmk
+    shield: settings_reset
+    artifact-name: niceNano_reset
+    
+  - board: xiao_ble//zmk
+    shield: corneish_zen_dongle
+    cmake-args: -DCONFIG_ZMK_STUDIO=n
+    artifact-name: xiaoBLE_master
+
+  - board: corneish_zen_left//zmk # v0.3: corneish_zen_v2_left; main: corneish_zen_left//zmk - https://zmk.dev/docs/hardware
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: zenv2_Left_slave
