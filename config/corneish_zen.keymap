@@ -40,7 +40,7 @@
 &mt {
     quick-tap-ms    = <_QUIKTAP_MS>;
     tapping-term-ms = <_TAPTERM_MS>;
-    flavor          = "balanced";
+    flavor          = "hold-preferred";
     retro-tap       //enabling retro-tap
     ;
 };
@@ -48,13 +48,13 @@
 &lt {
     quick-tap-ms    = <_QUIKTAP_MS>;
     tapping-term-ms = <_TAPTERM_MS>;
-    flavor          = "balanced";
+    flavor          = "hold-preferred";
     retro-tap       //enabling retro-tap
     ;
 };
 
 /* combos; uses https://github.com/urob/zmk-helpers/ */
-// syntax: ZMK_COMBO(name, bindings, keypos, layers, timeout, prior_idle, extra)
+// syntax: ZMK_COMBO(name, 	  bindings, 	  keypos, 		   layers, 		   timeout, 	prior_idle,  extra)
 ZMK_COMBO(combo_esc,          &kp ESC,        LT5 LT4,         Z_ALL,          _COMBO_MEDM, _PRIOR_ZERO)
 ZMK_COMBO(combo_enter,        &kp RET,        RB3 RB2 RB1,     Z_ALL,          _COMBO_LONG, _PRIOR_ZERO)
 ZMK_COMBO(combo_backslash,    AS(BSLH),       LB5 LB4,         Z_ALL,          _COMBO_MEDM, _PRIOR_IDLE)
