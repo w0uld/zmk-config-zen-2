@@ -29,6 +29,7 @@
 /* timings */
 #define _QUIKTAP_MS  250
 #define _TAPTERM_MS  200
+#define _TAPLONG_MS  500
 #define _PRIOR_ZERO  0
 #define _PRIOR_IDLE  120
 #define _PRIOR_LONG  250
@@ -46,7 +47,7 @@
  * requires [helper.h] from https://github.com/urob/zmk-helpers */
 ZMK_HOLD_TAP(hml,
     flavor = "balanced";
-    tapping-term-ms 		   = <_TAPTERM_MS>;
+    tapping-term-ms 		   = <_TAPLONG_MS>;
     quick-tap-ms 			   = <_QUIKTAP_MS>;
     require-prior-idle-ms 	   = <_PRIOR_IDLE>;
     bindings 				   = <&kp>, <&kp>;
@@ -56,7 +57,7 @@ ZMK_HOLD_TAP(hml,
 
 ZMK_HOLD_TAP(hmr,
     flavor = "balanced";
-    tapping-term-ms 		   = <_TAPTERM_MS>;
+    tapping-term-ms 		   = <_TAPLONG_MS>;
     quick-tap-ms 			   = <_QUIKTAP_MS>;
     require-prior-idle-ms 	   = <_PRIOR_IDLE>;
     bindings 				   = <&kp>, <&kp>;
