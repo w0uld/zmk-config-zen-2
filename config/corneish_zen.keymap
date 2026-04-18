@@ -100,6 +100,10 @@ ZMK_COMBO(combo_layerclmk,    &tog CLMK,      RH2 LH2 LH1,     Z_ALL,          _
 ZMK_COMBO(combo_layerqhrm,    &tog QHRM,	  RH2 LH2 LH0,     Z_ALL,          _COMBO_MEDM, _PRIOR_LONG)
 ZMK_COMBO(combo_layergame,    &tog GAME,      RH2 LH1 LH0,     Z_ALL,          _COMBO_MEDM, _PRIOR_LONG)
 
+ZMK_COMBO(combo_exitnavi,     &tog NAVI,      RT5 RT4,         Z_NAVI,         _COMBO_MEDM, _PRIOR_LONG)
+ZMK_COMBO(combo_exitnmbr,     &tog NMBR,      RT5 RT4,         Z_NMBR,         _COMBO_MEDM, _PRIOR_LONG)
+ZMK_COMBO(combo_exitgame,     &tog GAME,      RT5 RT4,         Z_GAME,         _COMBO_MEDM, _PRIOR_LONG)
+
 ZMK_COMBO(combo_out_tog,      &out OUT_TOG,   RT0 RB0,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG) // uses outputs.h
 ZMK_COMBO(combo_out_usb,      &out OUT_USB,   RT1 RB1,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG) // uses outputs.h
 ZMK_COMBO(combo_out_blt,      &out OUT_BLE,   RT2 RB2,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG) // uses outputs.h
@@ -151,7 +155,7 @@ ZMK_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         Z_ALL,          _
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
      &kp LSHFT       &kp Z           &kp X           &kp C           &kp V           &kp B               &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &mt LSHFT EQUAL
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                                     &mt LALT BSPC   &kp SPACE       &sl NMBR            &sl NAVI        &kp RALT        &sk LSHFT
+                                                     &kp LALT        &kp SPACE       &sl NMBR            &sl NAVI        &kp RALT        &kp BSPC
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
                >;
           };
@@ -196,7 +200,7 @@ ZMK_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         Z_ALL,          _
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
      &kp G           &kp LSHFT       &kp Z           &kp X           &kp C           &kp V               &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &kp LSHFT
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                                     &trans          &trans          &trans              &trans          &trans          &tog GAME
+                                                     &trans          &trans          &trans              &trans          &trans          &trans
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
                >;
           };
@@ -211,7 +215,7 @@ ZMK_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         Z_ALL,          _
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
      &trans          &kp LGUI        &kp LALT        &kp LCTRL       &kp LSHFT       &kp F13             AS(GRAVE)       AS(N1)          AS(N2)          AS(N3)          AS(FSLH)        AS(EQUAL)
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                                     &trans          &trans          &trans              &trans          AS(N0)          &tog NMBR
+                                                     &trans          &trans          &trans              &trans          AS(N0)          &trans
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
                >;
           };
@@ -226,7 +230,7 @@ ZMK_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         Z_ALL,          _
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
      &trans          &mt LGUI F9     &mt LALT F10    &mt LCTRL F11   &mt LSHFT F12   &kp F15             &kp F24         &kp C_VOL_DN    &kp C_MUTE      &kp C_VOL_UP    &kp C_PP        &kp LSHFT
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                                     &trans          &trans          &trans              &trans          &kp DEL         &tog NAVI
+                                                     &trans          &trans          &trans              &trans          &kp DEL         &trans
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
                >;
           };
