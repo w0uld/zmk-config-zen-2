@@ -1,0 +1,242 @@
+/*
+ * Copyright (c) 2021 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>     // to enable OUT_USB, OUT_BLE, OUT_TOG
+#include <dt-bindings/zmk/pointing.h>    // to enable mouse
+
+
+/* userspace modules */
+#include "zmk-helpers/helper.h"         // https://github.com/urob/zmk-helpers
+#include "zmk-helpers/key-labels/42.h"  // human readable bindings
+#include "resources/z_autoshift.h"      // autoshift
+
+/* layer aliases */
+#define QWER  	0
+#define QHRM 	1
+#define CLMK  	2
+#define GAME  	3
+#define NMBR  	4
+#define NAVI  	5
+#undef  Z_ALL
+#define Z_ALL QWER QHRM CLMK GAME NMBR NAVI 
+
+/* timings */
+#define _QUIKTAP_MS  250
+#define _TAPTERM_MS  200
+#define _TAPLONG_MS  500
+#define _PRIOR_ZERO  0
+#define _PRIOR_IDLE  120
+#define _PRIOR_LONG  250
+#define _COMBO_SHRT  15
+#define _COMBO_MEDM  30
+#define _COMBO_LONG  50
+
+/* key definitions; 
+ * requires [key-labels/42.h] from https://github.com/urob/zmk-helpers */
+#define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5  // Left-hand keys.
+#define KEYS_R RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5  // Right-hand keys.
+#define THUMBS LH2 LH1 LH0 RH0 RH1 RH2 													// Thumb keys.
+
+/* timeless home-row mods; 
+ * requires [helper.h] from https://github.com/urob/zmk-helpers */
+ZMK_HOLD_TAP(hml,
+    flavor = "balanced";
+    tapping-term-ms 		   = <_TAPLONG_MS>;
+    quick-tap-ms 			   = <_QUIKTAP_MS>;
+    require-prior-idle-ms 	   = <_PRIOR_IDLE>;
+    bindings 				   = <&kp>, <&kp>;
+    hold-trigger-key-positions = <KEYS_R THUMBS>;
+    hold-trigger-on-release;
+)
+
+ZMK_HOLD_TAP(hmr,
+    flavor = "balanced";
+    tapping-term-ms 		   = <_TAPLONG_MS>;
+    quick-tap-ms 			   = <_QUIKTAP_MS>;
+    require-prior-idle-ms 	   = <_PRIOR_IDLE>;
+    bindings 				   = <&kp>, <&kp>;
+    hold-trigger-key-positions = <KEYS_L THUMBS>;
+    hold-trigger-on-release;
+)
+
+/* adjustments */
+&mt {
+    quick-tap-ms    = <_QUIKTAP_MS>;
+    tapping-term-ms = <_TAPTERM_MS>;
+    flavor          = "hold-preferred";
+    retro-tap       //enabling retro-tap
+    ;
+};
+
+&lt {
+    quick-tap-ms    = <_QUIKTAP_MS>;
+    tapping-term-ms = <_TAPTERM_MS>;
+    flavor          = "hold-preferred";
+    retro-tap       //enabling retro-tap
+    ;
+};
+
+/* combos; uses https://github.com/urob/zmk-helpers/ */
+// syntax: ZMK_COMBO(name, 	  bindings, 	  keypos, 		   layers, 		   timeout, 	prior_idle,  extra)
+ZMK_COMBO(combo_esc,          &kp ESC,        LT5 LT4,         Z_ALL,          _COMBO_MEDM, _PRIOR_ZERO)
+ZMK_COMBO(combo_enter,        &kp RET,        RB3 RB2 RB1,     Z_ALL,          _COMBO_LONG, _PRIOR_ZERO)
+ZMK_COMBO(combo_backslash,    AS(BSLH),       LB5 LB4,         Z_ALL,          _COMBO_MEDM, _PRIOR_IDLE)
+ZMK_COMBO(combo_grave,        AS(GRAVE),      LH2 LH1,         Z_ALL,          _COMBO_MEDM, _PRIOR_IDLE)
+
+ZMK_COMBO(combo_copy,         &kp LC(INS),    LB4 LB3 LB2,     Z_ALL,          _COMBO_LONG, _PRIOR_IDLE)
+ZMK_COMBO(combo_paste,        &kp LS(INS),    LB3 LB2 LB1,     Z_ALL,          _COMBO_LONG, _PRIOR_IDLE)
+
+ZMK_COMBO(combo_locknum0,     &kp KP_NLCK,    RH0 RT5,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG)
+ZMK_COMBO(combo_lockcaps,     &kp CLCK,       RH0 RM5,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG)
+ZMK_COMBO(combo_lockscrl,     &kp SLCK,       RH0 RB5,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG)
+
+ZMK_COMBO(combo_layerbase,    &to QWER,       RH2 LH2 LH1 LH0, Z_ALL,          _COMBO_MEDM, _PRIOR_LONG) // return to base layer
+
+ZMK_COMBO(combo_layerclmk,    &tog CLMK,      RH2 LH2 LH1,     Z_ALL,          _COMBO_MEDM, _PRIOR_LONG)
+ZMK_COMBO(combo_layerqhrm,    &tog QHRM,	  RH2 LH2 LH0,     Z_ALL,          _COMBO_MEDM, _PRIOR_LONG)
+ZMK_COMBO(combo_layergame,    &tog GAME,      RH2 LH1 LH0,     Z_ALL,          _COMBO_MEDM, _PRIOR_LONG)
+
+ZMK_COMBO(combo_layergame0,   &tog GAME,      RT5 RT4,         GAME,           _COMBO_MEDM, _PRIOR_LONG) // layer exit combo
+ZMK_COMBO(combo_layernavi0,   &tog NAVI,      RT5 RT4,         NAVI,           _COMBO_MEDM, _PRIOR_LONG) // layer fix/exit combo
+ZMK_COMBO(combo_layernmbr0,   &tog NMBR,      RT5 RT4,         NMBR,           _COMBO_MEDM, _PRIOR_LONG) // layer fix/exit combo
+
+ZMK_COMBO(combo_out_tog,      &out OUT_TOG,   RT0 RB0,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG) // uses outputs.h
+ZMK_COMBO(combo_out_usb,      &out OUT_USB,   RT1 RB1,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG) // uses outputs.h
+ZMK_COMBO(combo_out_blt,      &out OUT_BLE,   RT2 RB2,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG) // uses outputs.h
+ZMK_COMBO(combo_ble_clr,      &bt BT_CLR,     LT0 LB0,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG)
+ZMK_COMBO(combo_ble_clrall,   &bt BT_CLR_ALL, LT0 LB5,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG)
+ZMK_COMBO(combo_ble_1,        &bt BT_SEL 0,   LT4 LB4,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG)
+ZMK_COMBO(combo_ble_2,        &bt BT_SEL 1,   LT3 LB3,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG)
+ZMK_COMBO(combo_ble_3,        &bt BT_SEL 2,   LT2 LB2,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG)
+ZMK_COMBO(combo_ble_4,        &bt BT_SEL 3,   LT1 LB1,         Z_ALL,          _COMBO_LONG, _PRIOR_LONG)
+
+ZMK_COMBO(combo_lctrl,        &sk LCTRL,      LM1 LM2 LM3,     QWER CLMK QHRM, _COMBO_MEDM, _PRIOR_LONG)
+ZMK_COMBO(combo_rctrl,        &sk LCTRL,      RM1 RM2 RM3,     QWER CLMK QHRM, _COMBO_MEDM, _PRIOR_LONG)
+ZMK_COMBO(combo_lgui,         &sk LGUI,       LM1 LT2 LM3,     QWER CLMK QHRM, _COMBO_MEDM, _PRIOR_LONG)
+ZMK_COMBO(combo_rgui,         &sk LGUI,       RM1 RT2 RM3,     QWER CLMK QHRM, _COMBO_MEDM, _PRIOR_LONG)
+ZMK_COMBO(combo_lctrlshft,    &sk LS(LCTRL),  LM1 LM2 LM3 LM4, QWER CLMK QHRM, _COMBO_LONG, _PRIOR_LONG)
+ZMK_COMBO(combo_rctrlshft,    &sk LS(LCTRL),  RM1 RM2 RM3 RM4, QWER CLMK QHRM, _COMBO_LONG, _PRIOR_LONG)
+
+ZMK_COMBO(combo_studio,       &studio_unlock, LT5 RT5,         Z_ALL,          _COMBO_MEDM, _PRIOR_LONG)
+
+/* keymap */
+/ {
+     keymap {
+          compatible = "zmk,keymap";
+/*
+          TRNS_layer {
+               display-name = "trns";
+               bindings = <
+// ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
+     &trans          &trans          &trans          &trans          &trans          &trans              &trans          &trans          &trans          &trans          &trans          &trans
+// ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
+     &trans          &trans          &trans          &trans          &trans          &trans              &trans          &trans          &trans          &trans          &trans          &trans
+// ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
+     &trans          &trans          &trans          &trans          &trans          &trans              &trans          &trans          &trans          &trans          &trans          &trans
+// ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
+                                                     &trans          &trans          &trans              &trans          &trans          &trans
+//                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
+               >;
+          };
+*/
+
+
+          QWER_layer {
+               display-name = "qwer";
+               bindings = <
+// ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
+     &lt NAVI TAB    &kp Q           &kp W           &kp E           &kp R           &kp T               &kp Y           &kp U           &kp I           &kp O           &kp P           &kp MINUS
+// ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
+     &kp LCTRL       &kp A           &kp S           &kp D           &kp F           &kp G               &kp H           &kp J           &kp K           &kp L           &kp SEMI        &kp APOS
+// ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
+     &kp LSHFT       &kp Z           &kp X           &kp C           &kp V           &kp B               &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &mt LSHFT EQUAL
+// ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
+                                                     &kp LALT        &kp SPACE       &sl NMBR            &mo NAVI        &kp RALT        &kp BSPC
+//                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
+               >;
+          };
+
+          QWERHRM_layer {
+               display-name = "qwer_hrm";
+               bindings = <
+// ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
+     &trans          &trans          &trans          &trans          &trans          &trans              &trans          &trans          &trans          &trans          &trans          &trans
+// ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
+     &trans          &trans          &trans          &trans          &trans          &trans              &trans          &trans          &trans          &trans          &trans          &trans
+// ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
+     &trans          &hml LGUI Z     &hml LALT X     &hml LCTRL C    &hml LSHFT V    &trans              &trans          &hmr LSHFT M   &hmr LCTRL COMMA &hmr LALT DOT   &hmr LGUI FSLH  &trans        
+// ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
+                                                     &trans          &trans          &trans              &trans          &trans          &trans
+//                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
+               >;
+          };
+
+          CLMK_layer {
+               display-name = "clmk"; 
+               bindings = <
+// ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
+     &trans          &kp Q           &kp W           &kp F           &kp P           &kp G               &kp J           &kp L           &kp U           &kp Y           &kp SEMI        &kp MINUS
+// ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
+     &trans          &kp A           &kp R           &kp S           &kp T           &kp D               &kp H           &kp N           &kp E           &kp I           &kp O           &kp APOS
+// ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
+     &trans          &kp Z           &kp X           &kp C           &kp V           &kp B               &kp K           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &mt LSHFT EQUAL
+// ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
+                                                     &trans          &trans          &trans              &trans          &trans          &trans
+//                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
+               >;
+          };
+
+          GAME_layer {
+               display-name = "game";
+               bindings = <
+// ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
+     &trans          &kp T           &kp Q           &kp W           &kp E           &kp R               &kp Y           &kp PG_UP       &kp UP          &kp PG_DN       &kp P           &trans
+// ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
+     &kp I           &kp LCTRL       &kp A           &kp S           &kp D           &kp F               &kp H           &kp LEFT        &kp DOWN        &kp RIGHT       &kp SEMI        &trans
+// ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
+     &kp G           &kp LSHFT       &kp Z           &kp X           &kp C           &kp V               &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &kp LSHFT
+// ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
+                                                     &trans          &trans          &trans              &trans          &trans          &trans
+//                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
+               >;
+          };
+
+          NMBR_layer {
+               display-name = "nmbr";
+               bindings = <
+// ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
+     &trans          &kp N1          &kp N2          &kp N3          &kp N4          &kp N5              AS(LPAR)        AS(N7)          AS(N8)          AS(N9)          AS(RPAR)        AS(MINUS)
+// ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
+     &trans          AS(SEMI)        AS(COMMA)       AS(DOT)         AS(APOS)        &kp KP_DOT          AS(LBKT)        AS(N4)          AS(N5)          AS(N6)          AS(RBKT)        AS(BSLH)
+// ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
+     &trans          &kp LGUI        &kp LALT        &kp LCTRL       &kp LSHFT       &kp F13             AS(GRAVE)       AS(N1)          AS(N2)          AS(N3)          AS(FSLH)        AS(EQUAL)
+// ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
+                                                     &trans          &trans          &trans              &trans          AS(N0)          &trans
+//                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
+               >;
+          };
+
+          NAVI_layer {
+               display-name = "navi";
+               bindings = <
+// ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
+     &trans          &kp F1          &kp F2          &kp F3          &kp F4          &kp F5              &kp INS         &kp PG_UP       &kp UP          &kp PG_DN       &kp HOME        &kp PAUSE_BREAK
+// ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼
+     &trans          &mt LGUI F5     &mt LALT F6     &mt LCTRL F7    &mt LSHFT F8    &kp F14             &kp F23         &kp LEFT        &kp DOWN        &kp RIGHT       &kp END         &kp PSCRN      
+// ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
+     &trans          &mt LGUI F9     &mt LALT F10    &mt LCTRL F11   &mt LSHFT F12   &kp F15             &kp F24         &kp C_VOL_DN    &kp C_MUTE      &kp C_VOL_UP    &kp C_PP        &kp LSHFT
+// ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
+                                                     &trans          &trans          &trans              &trans          &kp DEL         &trans
+//                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
+               >;
+          };
+     };
+};
+
+
